@@ -1,5 +1,19 @@
 # Bitácora — TaskU · Estrategia y validación
 
+## 2026-11-04 · Sesión 2 · Ajuste de contraste en tema oscuro
+
+- **Objetivo:** corregir el contraste del monograma, el avatar y el icono de advertencia en tema oscuro.
+- **Rama:** `main`.
+- **Hecho en esta sesión:**
+  - Se añadieron los tokens `--brand-ink` y `--warning-ink` con valores distintos por tema.
+  - El monograma y el avatar usan tinta oscura sobre el acento claro en modo oscuro.
+- **Archivos tocados:** `index.html`, `README.md`, `docs/BITACORA.md`.
+- **Verificación:** captura Edge headless del encabezado en tema oscuro → monograma legible; sin errores de consola.
+- **Versión:** PATCH → `1.0.1` — corrección visual compatible.
+- **Commits/PR:** ver `git log`.
+- **Pendiente / siguiente paso:** comprobar la versión desplegada en GitHub Pages.
+- **Decisiones o riesgos:** los tokens permiten ajustar el contraste sin duplicar reglas por componente.
+
 ## 2026-11-04 · Sesión 1 · Publicación del dossier estratégico
 
 - **Objetivo:** convertir los cinco documentos Markdown de TaskU en una página web navegable, agregar matrices EFI/EFE y análisis PESTEL, y publicarla en GitHub Pages.

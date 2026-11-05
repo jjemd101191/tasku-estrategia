@@ -58,4 +58,4 @@ Universidad Mesoamericana, sede Quetzaltenango · Ingeniería en Sistemas · Nov
 
 ## Versión
 
-**1.0.0** · primera publicación · 2026-11-04
+**1.0.1** · ajuste de contraste en tema oscuro · 2026-11-04
