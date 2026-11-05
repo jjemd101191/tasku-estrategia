@@ -1976,10 +1976,15 @@
     var accs = Array.prototype.slice.call(document.querySelectorAll('details.acc'));
     var allBtn = document.getElementById('toggle-all');
     var allLabel = document.getElementById('toggle-label');
+    function syncAllLabel() {
+      allLabel.textContent = accs.every(function (d) { return d.open; }) ? 'Contraer todo' : 'Expandir todo';
+    }
+    accs.forEach(function (d) { d.addEventListener('toggle', syncAllLabel); });
+    syncAllLabel();
     allBtn.addEventListener('click', function () {
       var anyClosed = accs.some(function (d) { return !d.open; });
       accs.forEach(function (d) { d.open = anyClosed; });
-      allLabel.textContent = anyClosed ? 'Contraer todo' : 'Expandir todo';
+      syncAllLabel();
     });
 
     function openHash() {
@@ -2000,14 +2005,20 @@
     onScroll();
 
     var navLinks = Array.prototype.slice.call(document.querySelectorAll('[data-nav]'));
-    var sections = navLinks.map(function (a) { return document.getElementById(a.dataset.nav); }).filter(Boolean);
+    var navMap = {
+      proyecto: 'proyecto', canvas: 'canvas', competencia: 'competencia',
+      diagnostico: 'diagnostico', efi: 'diagnostico', efe: 'diagnostico',
+      pestel: 'diagnostico', muda: 'muda', sondeo: 'sondeo'
+    };
+    var sections = Object.keys(navMap).map(function (id) { return document.getElementById(id); }).filter(Boolean);
     if ('IntersectionObserver' in window) {
       var obs = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
           if (!e.isIntersecting) return;
-          navLinks.forEach(function (a) { a.classList.toggle('active', a.dataset.nav === e.target.id); });
+          var key = navMap[e.target.id];
+          navLinks.forEach(function (a) { a.classList.toggle('active', a.dataset.nav === key); });
         });
-      }, { rootMargin: '-35% 0px -55% 0px' });
+      }, { rootMargin: '-25% 0px -60% 0px' });
       sections.forEach(function (s) { obs.observe(s); });
     }
 
