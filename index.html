@@ -1,0 +1,2017 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TaskU · Estrategia y validación</title>
+<meta name="description" content="Dossier estratégico de TaskU: propuesta de valor, Business Model Canvas, perfil competitivo, matrices EFI y EFE, análisis PESTEL, Muda y sondeo académico.">
+<meta name="theme-color" content="#0a5c4d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a5c4d'/%3E%3Ctext x='32' y='45' font-family='Inter,sans-serif' font-size='38' font-weight='700' fill='%23d6f26b' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>
+  try {
+    var saved = localStorage.getItem('tasku-theme');
+    if (saved === 'dark' || saved === 'light') document.documentElement.dataset.theme = saved;
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.dataset.theme = 'dark';
+  } catch (e) {}
+</script>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f4f3ee;
+    --surface: #fcfcfb;
+    --surface-2: #eeede6;
+    --ink: #12140f;
+    --ink-2: #52514e;
+    --muted: #898781;
+    --line: #e1e0d9;
+    --line-strong: #c3c2b7;
+    --accent: #0a5c4d;
+    --accent-2: #147a66;
+    --accent-soft: #e0efeb;
+    --accent-ink: #084d41;
+    --lime: #d6f26b;
+    --coral: #b4472f;
+    --coral-soft: #f7e6e0;
+    --series-1: #2a78d6;
+    --series-1-strong: #184f95;
+    --good: #0ca30c;
+    --warning: #fab219;
+    --serious: #ec835a;
+    --critical: #d03b3b;
+    --header-bg: rgba(244, 243, 238, .86);
+    --radius: 18px;
+    --shadow: 0 1px 2px rgba(18, 20, 15, .04), 0 18px 44px -28px rgba(18, 20, 15, .3);
+  }
+  html[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0d0d0c;
+    --surface: #161715;
+    --surface-2: #1e1f1c;
+    --ink: #f0efec;
+    --ink-2: #c3c2b7;
+    --muted: #898781;
+    --line: #2c2c2a;
+    --line-strong: #383835;
+    --accent: #7ad6bd;
+    --accent-2: #9ae4cf;
+    --accent-soft: #16302a;
+    --accent-ink: #b7f0e0;
+    --lime: #c8e86a;
+    --coral: #e89980;
+    --coral-soft: #33201a;
+    --series-1: #3987e5;
+    --series-1-strong: #86b6ef;
+    --header-bg: rgba(13, 13, 12, .86);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 18px 44px -28px rgba(0, 0, 0, .8);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0d0d0c;
+      --surface: #161715;
+      --surface-2: #1e1f1c;
+      --ink: #f0efec;
+      --ink-2: #c3c2b7;
+      --muted: #898781;
+      --line: #2c2c2a;
+      --line-strong: #383835;
+      --accent: #7ad6bd;
+      --accent-2: #9ae4cf;
+      --accent-soft: #16302a;
+      --accent-ink: #b7f0e0;
+      --lime: #c8e86a;
+      --coral: #e89980;
+      --coral-soft: #33201a;
+      --series-1: #3987e5;
+      --series-1-strong: #86b6ef;
+      --header-bg: rgba(13, 13, 12, .86);
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 18px 44px -28px rgba(0, 0, 0, .8);
+    }
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+  body {
+    margin: 0;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--lime); color: #12140f; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--accent-2); }
+  h1, h2, h3, h4 { margin: 0; line-height: 1.15; letter-spacing: -.02em; }
+  p { margin: 0 0 14px; }
+  p:last-child { margin-bottom: 0; }
+  ul, ol { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  strong { font-weight: 600; }
+  .wrap { width: min(1140px, calc(100% - 40px)); margin-inline: auto; }
+  .skip {
+    position: absolute; left: -999px; top: 8px; z-index: 100;
+    background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 10px;
+  }
+  .skip:focus { left: 20px; }
+  .progress {
+    position: fixed; inset: 0 auto auto 0; height: 2px; width: 0%;
+    background: var(--accent); z-index: 90; transition: width .1s linear;
+  }
+
+  /* Header */
+  .topbar {
+    position: sticky; top: 0; z-index: 60;
+    background: var(--header-bg);
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 18px; min-height: 64px;
+  }
+  .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+  .brand-mark {
+    display: grid; place-items: center; width: 32px; height: 32px; border-radius: 9px;
+    background: var(--accent); color: var(--lime);
+    font-weight: 700; font-size: 17px; letter-spacing: -.04em;
+  }
+  .brand-name { font-weight: 650; letter-spacing: -.02em; }
+  .brand-sub { color: var(--muted); font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; }
+  .nav { display: flex; align-items: center; gap: 2px; }
+  .nav a {
+    color: var(--ink-2); text-decoration: none; font-size: .84rem; font-weight: 500;
+    padding: 7px 10px; border-radius: 8px; white-space: nowrap;
+  }
+  .nav a:hover { background: var(--surface-2); color: var(--ink); }
+  .nav a.active { color: var(--accent); background: var(--accent-soft); }
+  .actions { display: flex; align-items: center; gap: 8px; }
+  .btn {
+    appearance: none; border: 1px solid var(--line-strong); background: var(--surface);
+    color: var(--ink-2); font: inherit; font-size: .8rem; font-weight: 500;
+    padding: 8px 12px; border-radius: 9px; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 7px; transition: .18s ease;
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn.icon { width: 36px; height: 36px; padding: 0; justify-content: center; }
+  .btn svg { width: 16px; height: 16px; }
+  .btn .label-expand { display: inline; }
+
+  /* Hero */
+  .hero { padding: 66px 0 30px; position: relative; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: -30% -10% auto 40%; height: 520px;
+    background: radial-gradient(closest-side, var(--accent-soft), transparent 72%);
+    opacity: .8; pointer-events: none; z-index: -1;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 48px; align-items: end; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-size: .72rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .eyebrow::before { content: ""; width: 22px; height: 1px; background: var(--accent); }
+  .hero h1 {
+    font-size: clamp(3.7rem, 8.4vw, 7.4rem); font-weight: 700;
+    letter-spacing: -.065em; line-height: .88; margin: 20px 0 0;
+  }
+  .hero h1 .dot { color: var(--accent); }
+  .hero-lede {
+    font-size: clamp(1.02rem, 1.5vw, 1.22rem); color: var(--ink-2);
+    max-width: 620px; margin-top: 26px;
+  }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 24px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    border: 1px solid var(--line-strong); border-radius: 999px;
+    padding: 5px 11px; font-size: .74rem; font-weight: 500; color: var(--ink-2);
+    background: var(--surface);
+  }
+  .chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .ficha {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 22px; box-shadow: var(--shadow);
+  }
+  .ficha h2 { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .ficha dl { margin: 14px 0 0; display: grid; gap: 11px; }
+  .ficha .row { display: grid; grid-template-columns: 86px 1fr; gap: 12px; font-size: .82rem; }
+  .ficha dt { color: var(--muted); }
+  .ficha dd { margin: 0; color: var(--ink); font-weight: 500; }
+  .ficha .team { color: var(--ink-2); font-weight: 400; line-height: 1.5; }
+
+  /* Stats */
+  .stats {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    margin-top: 44px;
+  }
+  .stat { padding: 22px 24px 22px 0; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: 0; }
+  .stat + .stat { padding-left: 24px; }
+  .stat-value {
+    font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 650; letter-spacing: -.045em;
+    line-height: 1; font-variant-numeric: tabular-nums;
+  }
+  .stat-value small { font-size: .48em; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+  .stat-label { margin-top: 9px; font-size: .8rem; color: var(--ink-2); line-height: 1.4; }
+  .stat-src { margin-top: 3px; font-size: .68rem; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+
+  /* Sections + accordions */
+  main { padding-bottom: 30px; }
+  .section { padding: 20px 0; }
+  .group-intro { padding: 46px 0 14px; max-width: 760px; }
+  .group-intro h2 { font-size: clamp(1.8rem, 3.4vw, 2.7rem); margin: 14px 0 14px; letter-spacing: -.035em; }
+  .group-intro p { color: var(--ink-2); }
+  .group-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+  .acc {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    margin-bottom: 12px; overflow: hidden; transition: border-color .2s ease, box-shadow .2s ease;
+  }
+  .acc:hover { border-color: var(--line-strong); }
+  .acc[open] { border-color: var(--line-strong); box-shadow: var(--shadow); }
+  .acc > summary {
+    list-style: none; cursor: pointer; user-select: none;
+    display: grid; grid-template-columns: 54px 1fr 40px; gap: 18px; align-items: center;
+    padding: 22px 26px;
+  }
+  .acc > summary::-webkit-details-marker { display: none; }
+  .acc > summary:hover { background: var(--surface-2); }
+  .acc[open] > summary { background: var(--surface-2); border-bottom: 1px solid var(--line); }
+  .acc-index {
+    font-size: .72rem; font-weight: 600; color: var(--muted); letter-spacing: .1em;
+    font-variant-numeric: tabular-nums;
+  }
+  .acc-head { display: grid; gap: 2px; }
+  .acc-kicker { font-size: .66rem; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--accent); }
+  .acc-title { font-size: 1.16rem; font-weight: 600; letter-spacing: -.02em; }
+  .acc-desc { font-size: .82rem; color: var(--muted); line-height: 1.45; margin-top: 2px; }
+  .acc-icon {
+    display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+    border: 1px solid var(--line-strong); color: var(--ink-2); transition: transform .25s ease, background .2s ease;
+  }
+  .acc-icon svg { width: 15px; height: 15px; }
+  .acc[open] .acc-icon { transform: rotate(180deg); background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .acc-body { padding: 30px 26px 38px; animation: fade .32s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+
+  /* Typographic blocks */
+  .lead { font-size: 1.05rem; color: var(--ink-2); max-width: 820px; }
+  .acc-body > p { max-width: 86ch; }
+  .h3 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: .72rem; font-weight: 600; letter-spacing: .13em; text-transform: uppercase;
+    color: var(--accent); margin: 36px 0 14px;
+  }
+  .h3::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .h4 { font-size: 1.05rem; font-weight: 600; margin: 24px 0 10px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .panel {
+    background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px 20px;
+  }
+  .panel h4 { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; font-weight: 600; }
+  .panel ul { margin: 0; padding-left: 17px; }
+  .panel li { font-size: .86rem; color: var(--ink-2); }
+  .panel.accent { background: var(--accent-soft); border-color: transparent; }
+  .panel.accent h4 { color: var(--accent-ink); }
+  .panel.accent li { color: var(--ink); }
+  .callout {
+    display: grid; grid-template-columns: 26px 1fr; gap: 12px;
+    border-left: 3px solid var(--accent); background: var(--surface-2);
+    border-radius: 0 12px 12px 0; padding: 15px 18px; margin: 20px 0;
+    font-size: .87rem; color: var(--ink-2);
+  }
+  .callout svg { width: 18px; height: 18px; color: var(--accent); margin-top: 2px; }
+  .callout strong { color: var(--ink); }
+  .callout.warn { border-left-color: var(--coral); }
+  .callout.warn svg { color: var(--coral); }
+  .callout p { margin: 0; }
+  .quote {
+    font-family: "Instrument Serif", Georgia, serif; font-style: italic;
+    font-size: clamp(1.35rem, 2.2vw, 1.8rem); line-height: 1.35;
+    color: var(--ink); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    padding: 26px 0; margin: 26px 0;
+  }
+  .quote footer { font-family: "Inter", sans-serif; font-style: normal; font-size: .78rem; color: var(--muted); margin-top: 10px; letter-spacing: .04em; }
+  .slogan { font-size: .9rem; color: var(--accent); font-weight: 600; margin-top: 8px; }
+
+  /* Tables */
+  .table-wrap {
+    border: 1px solid var(--line); border-radius: 14px; overflow-x: auto;
+    background: var(--surface); margin: 14px 0;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: .87rem; min-width: 560px; }
+  caption { text-align: left; padding: 12px 16px 0; font-size: .72rem; color: var(--muted); }
+  th {
+    text-align: left; font-size: .66rem; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--muted); background: var(--surface-2);
+    padding: 11px 14px; border-bottom: 1px solid var(--line); white-space: nowrap;
+  }
+  td { padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--ink-2); }
+  tbody tr:last-child td { border-bottom: 0; }
+  tbody tr:hover td { background: color-mix(in srgb, var(--surface-2) 55%, transparent); }
+  td strong { color: var(--ink); }
+  .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .center { text-align: center; }
+  .total-row td { background: var(--surface-2); font-weight: 600; color: var(--ink); border-top: 1px solid var(--line-strong); }
+
+  /* Tags */
+  .tag {
+    display: inline-flex; align-items: center; gap: 4px; border-radius: 999px;
+    padding: 2px 8px; font-size: .68rem; font-weight: 600; letter-spacing: .03em;
+    white-space: nowrap;
+  }
+  .tag.f { background: var(--accent-soft); color: var(--accent-ink); }
+  .tag.d { background: var(--coral-soft); color: var(--coral); }
+  .tag.o { background: var(--accent-soft); color: var(--accent-ink); }
+  .tag.a { background: var(--coral-soft); color: var(--coral); }
+  .tag.neutral { background: var(--surface-2); color: var(--ink-2); }
+
+  /* Persona */
+  .persona {
+    border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+    background: var(--surface); margin: 14px 0;
+  }
+  .persona-head {
+    display: grid; grid-template-columns: 64px 1fr auto; gap: 18px; align-items: center;
+    padding: 22px 24px; background: var(--surface-2); border-bottom: 1px solid var(--line);
+  }
+  .avatar {
+    width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center;
+    background: var(--accent); color: var(--lime); font-weight: 650; font-size: 1.15rem;
+    letter-spacing: -.02em;
+  }
+  .persona-head h3 { font-size: 1.3rem; }
+  .persona-head p { font-size: .84rem; color: var(--muted); margin: 3px 0 0; }
+  .persona-meta { display: grid; gap: 2px; text-align: right; font-size: .76rem; color: var(--muted); }
+  .persona-meta strong { color: var(--ink); font-weight: 600; }
+  .persona blockquote {
+    margin: 0; padding: 20px 24px; border-bottom: 1px solid var(--line);
+    font-family: "Instrument Serif", Georgia, serif; font-style: italic;
+    font-size: 1.25rem; line-height: 1.45; color: var(--ink);
+  }
+  .persona-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .persona-grid > div { padding: 20px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .persona-grid > div:nth-child(3n) { border-right: 0; }
+  .persona-grid > div:nth-last-child(-n+3) { border-bottom: 0; }
+  .persona-grid h4 { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 9px; font-weight: 600; }
+  .persona-grid ul { margin: 0; padding-left: 16px; }
+  .persona-grid li { font-size: .82rem; color: var(--ink-2); margin-bottom: 4px; }
+
+  /* Value proposition canvas */
+  .vpc { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 16px 0; }
+  .vpc-col { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .vpc-col > header {
+    padding: 14px 18px; font-size: .68rem; font-weight: 600; letter-spacing: .12em;
+    text-transform: uppercase; background: var(--surface-2); border-bottom: 1px solid var(--line);
+    color: var(--muted);
+  }
+  .vpc-col > header.accent { background: var(--accent-soft); color: var(--accent-ink); }
+  .vpc-cell { padding: 16px 18px; border-bottom: 1px solid var(--line); }
+  .vpc-cell:last-child { border-bottom: 0; }
+  .vpc-cell h4 { font-size: .78rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .vpc-cell ul { margin: 0; padding-left: 16px; }
+  .vpc-cell li { font-size: .81rem; color: var(--ink-2); margin-bottom: 3px; }
+
+  /* Funnel */
+  .funnel { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin: 18px 0; counter-reset: step; }
+  .funnel-step {
+    position: relative; background: var(--surface-2); border: 1px solid var(--line);
+    border-radius: 14px; padding: 18px 18px 16px;
+  }
+  .funnel-step::after {
+    content: "→"; position: absolute; right: -18px; top: 50%; transform: translateY(-50%);
+    color: var(--line-strong); font-size: 1rem;
+  }
+  .funnel-step:last-child::after { display: none; }
+  .funnel-step .n {
+    display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--accent); color: var(--bg); font-size: .72rem; font-weight: 700; margin-bottom: 10px;
+  }
+  .funnel-step h4 { font-size: .9rem; margin-bottom: 6px; }
+  .funnel-step p { font-size: .78rem; color: var(--ink-2); margin: 0; }
+  .funnel-step.feature { border-color: var(--accent); background: var(--accent-soft); }
+
+  /* BMC */
+  .bmc {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+      "partners activities value relationships segments"
+      "partners resources value channels segments"
+      "costs costs costs revenues revenues";
+    gap: 8px; margin: 18px 0;
+  }
+  .bmc-block {
+    background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 15px; min-height: 100px;
+  }
+  .bmc-block h4 { display: flex; align-items: center; gap: 7px; font-size: .72rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; line-height: 1.3; }
+  .bmc-block h4 svg { width: 14px; height: 14px; color: var(--accent); flex: 0 0 auto; }
+  .bmc-block ul { margin: 0; padding-left: 14px; }
+  .bmc-block li { font-size: .72rem; color: var(--ink-2); line-height: 1.45; margin-bottom: 3px; }
+  .bmc-block.value { background: var(--accent-soft); border-color: color-mix(in srgb, var(--accent) 30%, var(--line)); }
+  .bmc-block.value h4 { color: var(--accent-ink); }
+  .bmc-block.value li { color: var(--ink); }
+  .bmc-block.partners { grid-area: partners; }
+  .bmc-block.activities { grid-area: activities; }
+  .bmc-block.resources { grid-area: resources; }
+  .bmc-block.value { grid-area: value; }
+  .bmc-block.relationships { grid-area: relationships; }
+  .bmc-block.channels { grid-area: channels; }
+  .bmc-block.segments { grid-area: segments; }
+  .bmc-block.costs { grid-area: costs; }
+  .bmc-block.revenues { grid-area: revenues; }
+
+  /* Charts */
+  .chart-card {
+    border: 1px solid var(--line); border-radius: 14px; background: var(--surface);
+    padding: 18px 20px; margin: 16px 0;
+  }
+  .chart-card > header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
+  .chart-card h4 { font-size: .9rem; font-weight: 600; }
+  .chart-card .meta { font-size: .72rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .chart { display: grid; gap: 9px; }
+  .bar-row {
+    display: grid; grid-template-columns: minmax(150px, 210px) 1fr 76px; gap: 14px;
+    align-items: center; padding: 2px 0;
+  }
+  .bar-label { font-size: .8rem; color: var(--ink-2); line-height: 1.3; }
+  .bar-track { display: block; height: 10px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
+  .bar-fill {
+    display: block; height: 100%; width: var(--w, 0%); background: var(--series-1);
+    border-radius: 0 4px 4px 0; transform-origin: left center;
+  }
+  .acc[open] .bar-fill { animation: grow .7s cubic-bezier(.2, .7, .3, 1) both; }
+  @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  .bar-row:hover .bar-fill { filter: brightness(1.08); }
+  .bar-row.is-us .bar-label { color: var(--ink); font-weight: 600; }
+  .bar-row.is-us .bar-fill { background: var(--series-1-strong); }
+  .bar-val {
+    text-align: right; font-size: .78rem; color: var(--ink-2);
+    font-variant-numeric: tabular-nums; white-space: nowrap;
+  }
+  .bar-val b { font-weight: 600; color: var(--ink); }
+  .bar-val span { color: var(--muted); font-size: .7rem; margin-left: 3px; }
+  .chart-note { font-size: .72rem; color: var(--muted); margin-top: 10px; }
+  .chart-legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: .72rem; color: var(--ink-2); margin-top: 12px; }
+  .chart-legend i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; }
+  .legend-us { background: var(--series-1-strong); }
+  .legend-other { background: var(--series-1); }
+
+  /* Matrix extras */
+  .method {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+    background: var(--surface); margin: 18px 0;
+  }
+  .method > div { padding: 14px 16px; border-right: 1px solid var(--line); display: grid; gap: 2px; }
+  .method > div:last-child { border-right: 0; }
+  .m-v { font-size: 1.2rem; font-weight: 650; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+  .m-l { font-size: .66rem; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: .85em; background: var(--surface-2); border: 1px solid var(--line);
+    padding: 1px 5px; border-radius: 5px; color: var(--ink);
+  }
+  td.r4 { background: color-mix(in srgb, var(--accent) 13%, transparent); }
+  td.r3 { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+  td.r2 { background: color-mix(in srgb, var(--coral) 7%, transparent); }
+  td.r1 { background: color-mix(in srgb, var(--coral) 15%, transparent); }
+  td.r1 small, td.r2 small, td.r3 small, td.r4 small { color: var(--muted); font-size: .7em; }
+  .muda-main {
+    display: grid; grid-template-columns: 1fr auto; gap: 18px 24px; align-items: center;
+    border: 1px solid var(--accent); background: var(--accent-soft);
+    border-radius: 14px; padding: 20px 22px; margin: 16px 0;
+  }
+  .muda-main .kicker { font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); font-weight: 600; }
+  .muda-main h4 { font-size: 1.35rem; margin: 5px 0 6px; letter-spacing: -.03em; }
+  .muda-main p { font-size: .86rem; color: var(--ink-2); margin: 0; }
+  .muda-main .badge {
+    display: grid; place-items: center; width: 74px; height: 74px; border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    font-size: .64rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+    color: var(--accent-ink); text-align: center; line-height: 1.2; padding: 8px;
+  }
+
+  /* Score meter */
+  .meter-card {
+    display: grid; grid-template-columns: 1fr auto; gap: 18px 26px; align-items: end;
+    border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; background: var(--surface);
+    margin: 16px 0;
+  }
+  .meter-card h4 { font-size: .8rem; color: var(--muted); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+  .meter-value { font-size: 2.2rem; font-weight: 650; letter-spacing: -.04em; font-variant-numeric: tabular-nums; line-height: 1; }
+  .meter-value small { font-size: .4em; color: var(--muted); font-weight: 500; letter-spacing: 0; }
+  .meter { grid-column: 1 / -1; position: relative; height: 12px; border-radius: 6px; background: var(--surface-2); overflow: visible; }
+  .meter-fill { height: 100%; border-radius: 6px 0 0 6px; background: var(--accent); width: var(--w); }
+  .meter-mid { position: absolute; left: 50%; top: -5px; bottom: -5px; width: 1px; background: var(--line-strong); }
+  .meter-mid span { position: absolute; left: 50%; transform: translateX(-50%); bottom: calc(100% + 5px); font-size: .64rem; color: var(--muted); white-space: nowrap; }
+  .meter-scale { grid-column: 1 / -1; display: flex; justify-content: space-between; font-size: .64rem; color: var(--muted); margin-top: -10px; font-variant-numeric: tabular-nums; }
+
+  /* PESTEL */
+  .pestel-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 16px 0; }
+  .pestel-card {
+    border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px;
+    background: var(--surface); display: grid; grid-template-columns: 44px 1fr; gap: 14px;
+  }
+  .pestel-letter {
+    width: 44px; height: 44px; border-radius: 11px; display: grid; place-items: center;
+    background: var(--accent-soft); color: var(--accent-ink);
+    font-size: 1.15rem; font-weight: 650; letter-spacing: -.02em;
+  }
+  .pestel-card h4 { font-size: .92rem; margin-bottom: 3px; }
+  .pestel-card .impact { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .09em; margin-bottom: 10px; }
+  .pestel-card ul { margin: 0; padding-left: 16px; }
+  .pestel-card li { font-size: .8rem; color: var(--ink-2); margin-bottom: 5px; }
+  .impact-chip {
+    display: inline-flex; align-items: center; gap: 5px; margin-top: 11px;
+    padding: 3px 9px; border-radius: 999px; font-size: .66rem; font-weight: 600;
+    background: var(--surface-2); color: var(--ink-2);
+  }
+  .impact-chip .ic { width: 13px; height: 13px; }
+  .impact-chip.good { background: color-mix(in srgb, var(--good) 12%, var(--surface)); color: var(--ink); }
+  .impact-chip.good .ic { color: var(--good); }
+  .impact-chip.warn { background: color-mix(in srgb, var(--warning) 18%, var(--surface)); color: var(--ink); }
+  .impact-chip.warn .ic { color: #a96f00; }
+  .impact-chip.serious { background: color-mix(in srgb, var(--serious) 16%, var(--surface)); color: var(--ink); }
+  .impact-chip.serious .ic { color: var(--serious); }
+
+  /* KPI mini cards */
+  .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 18px 0; }
+  .kpi { border: 1px solid var(--line); border-radius: 13px; padding: 15px 16px; background: var(--surface); }
+  .kpi .v { font-size: 1.55rem; font-weight: 650; letter-spacing: -.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+  .kpi .l { font-size: .74rem; color: var(--ink-2); margin-top: 7px; line-height: 1.4; }
+  .kpi .s { font-size: .62rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-top: 4px; }
+
+  /* Question blocks */
+  .question { border-top: 1px solid var(--line); padding-top: 24px; margin-top: 28px; }
+  .question:first-of-type { border-top: 0; padding-top: 0; margin-top: 10px; }
+  .q-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+  .q-num { font-size: .7rem; font-weight: 600; color: var(--accent); letter-spacing: .1em; }
+  .q-head h4 { font-size: 1rem; }
+  .q-sub { font-size: .78rem; color: var(--muted); margin-bottom: 12px; }
+  .interpretation {
+    font-size: .82rem; color: var(--ink-2); border-left: 2px solid var(--line-strong);
+    padding-left: 12px; margin-top: 12px;
+  }
+  .interpretation strong { color: var(--ink); }
+
+  /* Strategy chips / integrated diagnosis */
+  .strategy-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 18px 0; }
+  .strategy {
+    display: grid; grid-template-columns: 30px 1fr; gap: 12px;
+    border: 1px solid var(--line); border-radius: 13px; padding: 16px 17px; background: var(--surface);
+  }
+  .strategy .n {
+    width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
+    background: var(--accent-soft); color: var(--accent-ink); font-size: .75rem; font-weight: 700;
+  }
+  .strategy h4 { font-size: .88rem; margin-bottom: 4px; }
+  .strategy p { font-size: .8rem; color: var(--ink-2); margin: 0; }
+
+  /* Footer */
+  footer.site {
+    border-top: 1px solid var(--line); margin-top: 40px; padding: 34px 0 46px;
+    color: var(--muted); font-size: .78rem;
+  }
+  .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; }
+  .footer-grid strong { color: var(--ink); }
+  .footer-grid ul { list-style: none; padding: 0; margin: 8px 0 0; }
+  .footer-grid li { margin-bottom: 4px; }
+  .footer-bottom { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line); font-size: .72rem; }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 30px; align-items: start; }
+    .ficha { max-width: 520px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-right: 0; }
+    .stat:nth-child(3), .stat:nth-child(4) { border-top: 1px solid var(--line); }
+    .stat:nth-child(3) { padding-left: 0; }
+    .bmc { grid-template-columns: repeat(3, 1fr); grid-template-areas:
+      "partners activities value"
+      "partners resources value"
+      "relationships channels segments"
+      "costs costs revenues"; }
+    .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .funnel { grid-template-columns: repeat(2, 1fr); }
+    .funnel-step:nth-child(2)::after { display: none; }
+    .topbar-inner { flex-wrap: wrap; padding: 8px 0 0; gap: 8px 14px; }
+    .nav {
+      order: 3; width: 100%; display: flex; overflow-x: auto;
+      padding-bottom: 6px; scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a { padding: 5px 9px; font-size: .78rem; }
+  }
+  @media (max-width: 760px) {
+    .wrap { width: calc(100% - 32px); }
+    .hero { padding-top: 44px; }
+    .hero h1 { font-size: clamp(3.2rem, 16vw, 5rem); }
+    .topbar-inner { min-height: 58px; }
+    .brand-sub { display: none; }
+    .btn .label-expand { display: none; }
+    .acc > summary { grid-template-columns: 34px 1fr 34px; gap: 12px; padding: 18px; }
+    .acc-desc { display: none; }
+    .acc-body { padding: 22px 18px 30px; }
+    .grid-2, .grid-3, .vpc, .pestel-grid, .strategy-grid, .footer-grid { grid-template-columns: 1fr; }
+    .persona-head { grid-template-columns: 52px 1fr; }
+    .persona-meta { grid-column: 1 / -1; text-align: left; grid-template-columns: repeat(3, auto); gap: 12px; }
+    .persona-grid { grid-template-columns: 1fr; }
+    .persona-grid > div { border-right: 0; border-bottom: 1px solid var(--line); }
+    .persona-grid > div:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); }
+    .persona-grid > div:last-child { border-bottom: 0; }
+    .funnel { grid-template-columns: 1fr; gap: 10px; }
+    .funnel-step::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -17px; transform: translateX(-50%); }
+    .funnel-step:nth-child(2)::after { display: block; }
+    .bmc { grid-template-columns: 1fr; grid-template-areas: "partners" "activities" "resources" "value" "relationships" "channels" "segments" "costs" "revenues"; }
+    .bar-row { grid-template-columns: 118px 1fr 62px; gap: 9px; }
+    .bar-label { font-size: .74rem; }
+    .stats { grid-template-columns: 1fr; }
+    .stat, .stat + .stat { padding: 18px 0; border-right: 0; border-top: 1px solid var(--line); }
+    .stat:first-child { border-top: 0; }
+    .meter-card { grid-template-columns: 1fr; }
+    .q-head { flex-direction: column; gap: 2px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#inicio" aria-label="TaskU, inicio">
+      <span class="brand-mark" aria-hidden="true">T</span>
+      <span class="brand-name">TaskU</span>
+      <span class="brand-sub">Dossier estratégico</span>
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#proyecto" data-nav="proyecto">Proyecto</a>
+      <a href="#canvas" data-nav="canvas">Modelo</a>
+      <a href="#competencia" data-nav="competencia">Competencia</a>
+      <a href="#diagnostico" data-nav="diagnostico">Diagnóstico</a>
+      <a href="#muda" data-nav="muda">Muda</a>
+      <a href="#sondeo" data-nav="sondeo">Sondeo</a>
+    </nav>
+    <div class="actions">
+      <button class="btn" id="toggle-all" type="button" aria-controls="contenido">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+        <span class="label-expand" id="toggle-label">Expandir todo</span>
+      </button>
+      <button class="btn icon" id="theme-toggle" type="button" aria-label="Cambiar tema">
+        <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+  <section class="hero wrap" id="inicio">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Universidad Mesoamericana · Quetzaltenango</span>
+        <h1>TaskU<span class="dot">.</span></h1>
+        <p class="hero-lede">Un dossier estratégico sobre la app académica que busca centralizar tareas, exámenes y proyectos universitarios: propuesta de valor, modelo de negocio, competencia, diagnóstico interno y externo, y la voz de 50 estudiantes.</p>
+        <div class="hero-tags">
+          <span class="chip"><span class="dot"></span>Flutter · MVVM</span>
+          <span class="chip"><span class="dot"></span>Freemium</span>
+          <span class="chip"><span class="dot"></span>Offline-first</span>
+          <span class="chip"><span class="dot"></span>Pago único</span>
+        </div>
+      </div>
+      <aside class="ficha" aria-label="Ficha del proyecto">
+        <h2>Ficha del proyecto</h2>
+        <dl>
+          <div class="row"><dt>Producto</dt><dd>TaskU, gestor académico móvil</dd></div>
+          <div class="row"><dt>Mercado</dt><dd>Estudiantes universitarios de Quetzaltenango</dd></div>
+          <div class="row"><dt>Modelo</dt><dd>AdMob + pase Premium de pago único</dd></div>
+          <div class="row"><dt>Equipo</dt><dd class="team">Demy De León · Marco Siguenza · Yordy Hernández · Juan José Martínez · Adrian Girón</dd></div>
+          <div class="row"><dt>Fecha</dt><dd>Noviembre de 2026</dd></div>
+        </dl>
+      </aside>
+    </div>
+
+    <div class="stats" aria-label="Indicadores clave">
+      <div class="stat">
+        <div class="stat-value">50</div>
+        <div class="stat-label">perfiles en el sondeo sintético</div>
+        <div class="stat-src">12 preguntas</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">74<small>%</small></div>
+        <div class="stat-label">tiene cuatro o más pendientes por semana</div>
+        <div class="stat-src">Sondeo · P2</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">3.45<small>/4</small></div>
+        <div class="stat-label">puntaje ponderado en la matriz competitiva</div>
+        <div class="stat-src">MPC · tabla detallada</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">2.85<small>/4</small></div>
+        <div class="stat-label">posición interna según la matriz EFI</div>
+        <div class="stat-src">Diagnóstico · EFI</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="section" aria-label="Contenido del dossier">
+
+      <details class="acc" id="proyecto" open>
+        <summary>
+          <span class="acc-index">01</span>
+          <span class="acc-head">
+            <span class="acc-kicker">Documento base</span>
+            <span class="acc-title">Proyecto y propuesta de valor</span>
+            <span class="acc-desc">Resumen, versiones, user persona, lienzo de propuesta de valor, canvas y embudo freemium.</span>
+          </span>
+          <span class="acc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+        </summary>
+        <div class="acc-body">
+          <p class="lead"><strong>TaskU</strong> es una aplicación móvil desarrollada en Flutter para el seguimiento estructurado de compromisos académicos (tareas, exámenes y proyectos). Nace de un problema concreto: en la universidad, las entregas y los exámenes se pierden entre horarios dispersos, libretas sin automatización y herramientas genéricas (Notion, ClickUp) con una curva de aprendizaje demasiado alta para la dinámica ágil de un estudiante.</p>
+          <p class="lead">Su viabilidad económica se resuelve con un modelo híbrido: publicidad pasiva (AdMob) en la versión gratuita y un esquema freemium con una barrera de 3 tareas activas simultáneas que motiva la compra de un pase Premium accesible, con pago único.</p>
+
+          <div class="h3">Versiones del producto</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Característica</th><th>Estudiante Estándar (Gratis)</th><th>Estudiante Premium (Pro)</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Tareas</strong></td><td>Hasta 3 activas simultáneas</td><td>Ilimitadas, con recordatorios</td></tr>
+                <tr><td><strong>Proyectos</strong></td><td>No disponible</td><td>Tableros de proyectos grupales</td></tr>
+                <tr><td><strong>Datos</strong></td><td>Almacenamiento local y exportación manual (JSON)</td><td>Sincronización y respaldo automático en la nube</td></tr>
+                <tr><td><strong>Publicidad</strong></td><td>Banners AdMob</td><td>Sin publicidad</td></tr>
+                <tr><td><strong>Exportación</strong></td><td>Archivo de respaldo</td><td>Exportación a PDF</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+            <p><strong>Nota técnica:</strong> además existe el rol <strong>Administrador del Sistema</strong> (configuración de umbrales y tarifas, auditoría de errores y métricas, respaldo central), que no es cliente sino supervisor técnico.</p>
+          </div>
+
+          <div class="h3">User persona</div>
+          <p>Se construyó una persona principal, correspondiente al usuario que descargará la versión gratuita y que, con el tiempo, puede convertirse en Premium.</p>
+          <div class="persona">
+            <div class="persona-head">
+              <div class="avatar" aria-hidden="true">DM</div>
+              <div>
+                <h3>Diego Morales</h3>
+                <p>Perfil principal · estudiante universitario</p>
+              </div>
+              <div class="persona-meta">
+                <span><strong>21 años</strong></span>
+                <span>5.º–8.º semestre</span>
+                <span>Nivel tecnológico básico / intermedio</span>
+              </div>
+            </div>
+            <blockquote>“Tengo muchos cursos, entregas y trabajos en equipo, y a veces se me pasa algo. Quiero una app sencilla, no otra herramienta pesada que aprender.”</blockquote>
+            <div class="persona-grid">
+              <div>
+                <h4>Objetivos</h4>
+                <ul>
+                  <li>Mantener organizadas tareas y exámenes.</li>
+                  <li>No olvidar entregas ni fechas importantes.</li>
+                  <li>Tener toda su información académica en un solo lugar.</li>
+                  <li>Coordinar proyectos y trabajos grupales.</li>
+                  <li>Consultar pendientes rápido desde el celular.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Frustraciones</h4>
+                <ul>
+                  <li>Horarios y fechas dispersos en varias plataformas.</li>
+                  <li>Libretas y blocs de notas sin recordatorios activos.</li>
+                  <li>Notion o ClickUp: complejos de configurar y mantener.</li>
+                  <li>Usar varias aplicaciones distintas a la vez.</li>
+                  <li>Dificultad para coordinar equipos de trabajo.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Necesidades</h4>
+                <ul>
+                  <li>Registro de tareas en pocos toques.</li>
+                  <li>Recordatorios confiables de entregas y exámenes.</li>
+                  <li>Acceso sin conexión a sus pendientes.</li>
+                  <li>Respaldo seguro de la información.</li>
+                  <li>Herramientas prácticas para proyectos grupales.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Comportamiento habitual</h4>
+                <ul>
+                  <li>Consulta sus pendientes principalmente desde el teléfono.</li>
+                  <li>Busca soluciones rápidas; abandona lo que exige demasiada configuración.</li>
+                  <li>Empieza gratis y solo paga si comprueba utilidad y necesita más capacidad.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Motivaciones para Premium</h4>
+                <ul>
+                  <li>Tareas ilimitadas cuando aumenta la carga del semestre.</li>
+                  <li>Proyectos grupales con tableros compartidos.</li>
+                  <li>No perder información al cambiar de dispositivo.</li>
+                  <li>Eliminar por completo la publicidad.</li>
+                  <li>Exportar su información académica a PDF.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Persona secundaria</h4>
+                <p style="font-size:.82rem;color:var(--ink-2);margin:0">Estudiante Premium (Pro): alta carga de cursos o proyectos en equipo —por ejemplo, el mismo Diego en un semestre exigente—. Su disparador de compra es llegar a la cuarta tarea activa o necesitar un tablero grupal coordinado.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="h3">Lienzo de propuesta de valor</div>
+          <p>El lienzo conecta las necesidades del estudiante (perfil del cliente) con las características del producto (mapa de valor).</p>
+          <div class="vpc">
+            <div class="vpc-col">
+              <header class="accent">Mapa de valor · TaskU</header>
+              <div class="vpc-cell">
+                <h4>Productos y servicios</h4>
+                <ul>
+                  <li>App móvil en Flutter</li>
+                  <li>Registro rápido de tareas y exámenes</li>
+                  <li>Recordatorios y alertas</li>
+                  <li>Almacenamiento local (SQLite / Hive)</li>
+                  <li>Respaldo manual en JSON</li>
+                  <li>Tableros de proyectos grupales</li>
+                  <li>Sincronización en la nube</li>
+                  <li>Exportación a PDF</li>
+                  <li>Modalidades Gratis y Premium</li>
+                </ul>
+              </div>
+              <div class="vpc-cell">
+                <h4>Creadores de ganancias</h4>
+                <ul>
+                  <li>Todo lo académico en un solo lugar</li>
+                  <li>Consulta sin Internet</li>
+                  <li>Interfaz simple (registro en segundos)</li>
+                  <li>Trabajo grupal coordinado</li>
+                  <li>Datos protegidos en la nube</li>
+                  <li>Experiencia sin anuncios (Premium)</li>
+                </ul>
+              </div>
+              <div class="vpc-cell">
+                <h4>Aliviadores de dolores</h4>
+                <ul>
+                  <li>Recordatorios evitan olvidos</li>
+                  <li>Centraliza fechas y horarios</li>
+                  <li>Curva de aprendizaje mínima</li>
+                  <li>Respaldo y sincronización</li>
+                  <li>Tableros colaborativos</li>
+                </ul>
+              </div>
+            </div>
+            <div class="vpc-col">
+              <header>Perfil del cliente · Diego</header>
+              <div class="vpc-cell">
+                <h4>Trabajos del cliente</h4>
+                <ul>
+                  <li>Registrar tareas y exámenes</li>
+                  <li>Recordar fechas de entrega</li>
+                  <li>Dar seguimiento a pendientes</li>
+                  <li>Coordinar trabajos grupales</li>
+                  <li>Mantener respaldada su información</li>
+                </ul>
+              </div>
+              <div class="vpc-cell">
+                <h4>Dolores</h4>
+                <ul>
+                  <li>Olvidar entregas y exámenes</li>
+                  <li>Información dispersa</li>
+                  <li>Herramientas complejas</li>
+                  <li>Pérdida de datos al cambiar de equipo</li>
+                  <li>Difícil coordinación de grupos</li>
+                </ul>
+              </div>
+              <div class="vpc-cell">
+                <h4>Ganancias</h4>
+                <ul>
+                  <li>Mayor organización personal</li>
+                  <li>Menos olvidos y entregas a tiempo</li>
+                  <li>Acceso rápido desde el celular</li>
+                  <li>Información disponible offline</li>
+                  <li>Mejor coordinación con compañeros</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="h4">Tabla de ajuste: dolor vs. solución</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Dolor del cliente</th><th>Cómo lo resuelve TaskU</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Olvidar entregas y exámenes</strong></td><td>Registro rápido de tareas y alertas/recordatorios confiables.</td></tr>
+                <tr><td><strong>Información dispersa</strong></td><td>Centralización de tareas, exámenes y proyectos en una sola app.</td></tr>
+                <tr><td><strong>Herramientas complicadas</strong></td><td>Interfaz enfocada en estudiantes, con curva de aprendizaje mínima.</td></tr>
+                <tr><td><strong>Falta de conexión constante</strong></td><td>Persistencia local (SQLite / Hive): funciona 100 % sin Internet.</td></tr>
+                <tr><td><strong>Pérdida de información</strong></td><td>Respaldo manual en JSON (gratis) y sincronización automática en la nube (Premium).</td></tr>
+                <tr><td><strong>Dificultad en trabajos grupales</strong></td><td>Tableros de proyectos colaborativos en tiempo real (Premium).</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="quote">
+            “TaskU es una aplicación móvil para estudiantes universitarios que centraliza tareas, exámenes y proyectos académicos en una herramienta sencilla, permitiendo organizar los compromisos en segundos y consultarlos incluso sin conexión.”
+            <footer>Declaración de propuesta de valor</footer>
+          </div>
+          <p class="slogan">Eslogan: “TaskU: menos tiempo organizando, más tiempo estudiando.”</p>
+
+          <div class="h3">Business Model Canvas · detalle de los nueve bloques</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Bloque</th><th>Detalle en TaskU</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Segmentos de clientes</strong></td><td>Estudiantes universitarios con varios cursos, tareas y proyectos grupales. Nicho de conversión: estudiantes con alta carga académica (perfil Premium).</td></tr>
+                <tr><td><strong>Propuesta de valor</strong></td><td>App académica sencilla que centraliza tareas, exámenes y proyectos; funciona sin conexión; gratuita para empezar y Premium para escalar.</td></tr>
+                <tr><td><strong>Canales</strong></td><td>App móvil distribuida en tiendas (Google Play / App Store); redes sociales; promoción en campus y comunidades estudiantiles; recomendación boca a boca entre compañeros.</td></tr>
+                <tr><td><strong>Relación con clientes</strong></td><td>Autoservicio dentro de la app; conversión progresiva de Gratis a Premium mediante un modal de actualización al intentar registrar una cuarta tarea o crear un tablero grupal; soporte por correo y FAQ.</td></tr>
+                <tr><td><strong>Fuentes de ingresos</strong></td><td>Publicidad AdMob (banners en versión gratuita) y cobro de pago único por el pase Premium accesible.</td></tr>
+                <tr><td><strong>Recursos clave</strong></td><td>Aplicación Flutter (arquitectura MVVM), base de datos local, infraestructura en la nube, sistema de cuentas / estado <code>isPremium</code> y equipo de desarrollo.</td></tr>
+                <tr><td><strong>Actividades clave</strong></td><td>Desarrollo y mantenimiento de software, sincronización y respaldo de datos, gestión de cuentas y pagos Premium, análisis de métricas de uso y corrección de errores.</td></tr>
+                <tr><td><strong>Socios clave</strong></td><td>Proveedores cloud (Firebase / AWS), plataformas de publicidad móvil (Google AdMob), tiendas de aplicaciones (Play Store / App Store), pasarelas de pago y universidades/comunidades estudiantiles locales.</td></tr>
+                <tr><td><strong>Estructura de costos</strong></td><td>Horas de desarrollo y mantenimiento, infraestructura cloud (almacenamiento y sincronización), comisiones de tiendas de aplicaciones (15–30 %), marketing universitario, soporte y administración técnica.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="h3">Modelo de ingresos y embudo de conversión</div>
+          <div class="funnel">
+            <div class="funnel-step">
+              <span class="n">1</span>
+              <h4>Descarga gratuita</h4>
+              <p>Instala TaskU y registra tareas iniciales. Monetización pasiva con banners AdMob.</p>
+            </div>
+            <div class="funnel-step">
+              <span class="n">2</span>
+              <h4>Uso habitual</h4>
+              <p>Hasta 3 tareas activas simultáneas. Datos locales y respaldo manual en JSON.</p>
+            </div>
+            <div class="funnel-step">
+              <span class="n">3</span>
+              <h4>Barrera freemium</h4>
+              <p>El estudiante intenta agregar una 4.ª tarea o crear un tablero grupal. Aparece el modal de actualización.</p>
+            </div>
+            <div class="funnel-step feature">
+              <span class="n">4</span>
+              <h4>Premium</h4>
+              <p>Pago único accesible. Tareas ilimitadas, tableros, nube, PDF y sin anuncios.</p>
+            </div>
+          </div>
+          <p><strong>Mecánica de conversión:</strong> la conversión ocurre de forma orgánica cuando el estudiante llega a su cuarta tarea activa en el ciclo semanal o intenta crear un tablero grupal con compañeros. En la versión de prueba o desarrollo, el flujo activa un modal con pago único simulado que conmuta el estado de la cuenta (<code>isPremium = true</code>), desbloqueando de inmediato tareas ilimitadas, respaldo en la nube y eliminando la publicidad de AdMob.</p>
+        </div>
+      </details>
+
+      <details class="acc" id="canvas">
+        <summary>
+          <span class="acc-index">02</span>
+          <span class="acc-head">
+            <span class="acc-kicker">Modelo de negocio</span>
+            <span class="acc-title">Business Model Canvas</span>
+            <span class="acc-desc">Los nueve bloques del modelo TaskU, con recursos, canales, costos e ingresos.</span>
+          </span>
+          <span class="acc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+        </summary>
+        <div class="acc-body">
+          <p class="lead">El lienzo resume cómo TaskU crea, entrega y captura valor. La columna central concentra la propuesta académica; a la izquierda queda la operación y a la derecha el mercado.</p>
+
+          <div class="bmc" aria-label="Business Model Canvas en nueve bloques">
+            <div class="bmc-block partners">
+              <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Socios clave</h4>
+              <ul>
+                <li>Proveedores cloud: Firebase / AWS</li>
+                <li>Google AdMob (publicidad)</li>
+                <li>Google Play y App Store</li>
+                <li>Pasarelas de pago</li>
+                <li>Universidades y colectivos estudiantiles</li>
+              </ul>
+            </div>
+            <div class="bmc-block activities">
+              <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Actividades clave</h4>
+              <ul>
+                <li>Desarrollo y mantenimiento</li>
+                <li>Sincronización y respaldo</li>
+                <li>Gestión de cuentas y Premium</li>
+                <li>Analítica de uso y corrección de errores</li>
+              </ul>
+            </div>
+            <div class="bmc-block resources">
+              <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.7Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>Recursos clave</h4>
+              <ul>
+                <li>App Flutter con arquitectura MVVM</li>
+                <li>Base local SQLite/Hive + nube</li>
+                <li>Sistema de cuentas y flag <code>isPremium</code></li>
+                <li>Equipo de desarrollo, diseño y QA</li>
+              </ul>
+            </div>
+            <div class="bmc-block value">
+              <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6L3.2 9.4l6.1-.9L12 3Z"/></svg>Propuesta de valor</h4>
+              <ul>
+                <li>Gestor académico simple: tareas, exámenes y proyectos</li>
+                <li>Funciona sin conexión</li>
+                <li>Gratis para empezar (3 tareas activas)</li>
+                <li>Premium: ilimitado, equipos, nube, sin anuncios y PDF</li>
+                <li><em>“Menos tiempo organizando, más tiempo estudiando”</em></li>
+              </ul>
+            </div>
+            <div class="bmc-block relationships">
+              <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 14c1.5-1.5 3-3.3 3-5.5A5.5 5.5 0 0 0 12 5 5.5 5.5 0 0 0 2 8.5c0 2.2 1.5 4 3 5.5l7 7Z"/></svg>Relación con clientes</h4>
+              <ul>
+                <li>Autoservicio dentro de la app</li>
+                <li>Conversión gradual Gratis → Premium (modal al 4.º pendiente)</li>
+                <li>Soporte por correo y FAQ</li>
+              </ul>
+            </div>
+            <div class="bmc-block channels">
+              <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M22 2 11 13"/></svg>Canales</h4>
+              <ul>
+                <li>Google Play / App Store</li>
+                <li>Redes sociales</li>
+                <li>Promoción en campus y grupos estudiantiles</li>
+                <li>Boca a boca entre compañeros</li>
+              </ul>
+            </div>
+            <div class="bmc-block segments">
+              <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>Segmentos de clientes</h4>
+              <ul>
+                <li>Estudiantes universitarios con varios cursos</li>
+                <li>Estudiantes con proyectos grupales (perfil Premium)</li>
+                <li>Usuarios móviles con nivel técnico básico o intermedio</li>
+              </ul>
+            </div>
+            <div class="bmc-block costs">
+              <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.2A2.4 2.4 0 0 1 12 8c1.7 0 2.5.9 2.5 2s-.8 2-2.5 2-2.5.9-2.5 2 .8 2 2.5 2a2.4 2.4 0 0 0 2.5-1.2"/></svg>Estructura de costos</h4>
+              <ul>
+                <li>Desarrollo, testing y mantenimiento evolutivo</li>
+                <li>Infraestructura en la nube</li>
+                <li>Comisión de tiendas de apps (15–30 %)</li>
+                <li>Marketing y promoción universitaria</li>
+                <li>Soporte y administración del sistema</li>
+              </ul>
+            </div>
+            <div class="bmc-block revenues">
+              <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>Fuentes de ingresos</h4>
+              <ul>
+                <li>Publicidad AdMob (banners en la versión gratuita)</li>
+                <li>Pago único por licencia Premium accesible</li>
+                <li>Barrera de 3 tareas activas como punto de conversión</li>
+                <li>Expansión B2B: convenios con facultades o licencias por semestre</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grid-3" style="margin-top:22px">
+            <div class="panel">
+              <h4>Motor de ingresos</h4>
+              <p style="font-size:.83rem;color:var(--ink-2);margin:0">Publicidad discreta en el nivel gratuito y un pase Premium de pago único. La expansión institucional B2B queda como opción, no como ingreso validado.</p>
+            </div>
+            <div class="panel">
+              <h4>Costo dominante</h4>
+              <p style="font-size:.83rem;color:var(--ink-2);margin:0">Horas de desarrollo y mantenimiento, más la comisión de las tiendas (15–30 %) y la infraestructura cloud cuando se active la sincronización.</p>
+            </div>
+            <div class="panel">
+              <h4>Palanca de conversión</h4>
+              <p style="font-size:.83rem;color:var(--ink-2);margin:0">El intento de registrar una cuarta tarea o de crear un tablero grupal. Es el punto donde el valor de uso choca con el límite del plan gratuito.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="acc" id="competencia">
+        <summary>
+          <span class="acc-index">03</span>
+          <span class="acc-head">
+            <span class="acc-kicker">Mercado</span>
+            <span class="acc-title">Matriz de Perfil Competitivo</span>
+            <span class="acc-desc">TaskU frente a Google Tasks, Notion, Trello y Microsoft To Do en siete factores críticos.</span>
+          </span>
+          <span class="acc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+        </summary>
+        <div class="acc-body">
+          <div class="grid-2">
+            <div>
+              <p class="lead">Comparación de la propuesta de valor de TaskU con herramientas digitales accesibles para estudiantes universitarios del mercado local: Google Tasks y Google Calendar, Notion, Trello y Microsoft To Do.</p>
+              <p style="font-size:.85rem;color:var(--ink-2)">La comparación se refiere a su disponibilidad como alternativas para estudiantes de Quetzaltenango; no implica que las empresas tengan sede local ni que exista una medición de su cuota de mercado en la ciudad.</p>
+            </div>
+            <div class="panel">
+              <h4>Metodología</h4>
+              <ul style="list-style:none;padding:0">
+                <li><strong>Siete</strong> factores críticos de éxito.</li>
+                <li>Pesos con suma total de <strong>1.00</strong>.</li>
+                <li>Calificación de <strong>1 a 4</strong>: 1 debilidad importante, 2 debilidad menor, 3 fortaleza menor, 4 fortaleza importante.</li>
+                <li>Puntaje = peso × calificación, sumado por alternativa.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <header>
+              <h4>Puntaje ponderado total</h4>
+              <span class="meta">Escala 1.00 – 4.00 · pesos suman 1.00</span>
+            </header>
+            <div class="chart" role="img" aria-label="TaskU 3.45, Microsoft To Do 3.35, Google Tasks y Calendar 3.20, Trello 3.05, Notion 2.95">
+              <div class="bar-row is-us" title="TaskU · 3.45 de 4.00">
+                <span class="bar-label">TaskU</span>
+                <span class="bar-track"><span class="bar-fill" style="--w:86.25%"></span></span>
+                <span class="bar-val"><b>3.45</b><span>/4</span></span>
+              </div>
+              <div class="bar-row" title="Microsoft To Do · 3.35 de 4.00">
+                <span class="bar-label">Microsoft To Do</span>
+                <span class="bar-track"><span class="bar-fill" style="--w:83.75%"></span></span>
+                <span class="bar-val"><b>3.35</b><span>/4</span></span>
+              </div>
+              <div class="bar-row" title="Google Tasks + Calendar · 3.20 de 4.00">
+                <span class="bar-label">Google Tasks + Calendar</span>
+                <span class="bar-track"><span class="bar-fill" style="--w:80%"></span></span>
+                <span class="bar-val"><b>3.20</b><span>/4</span></span>
+              </div>
+              <div class="bar-row" title="Trello · 3.05 de 4.00">
+                <span class="bar-label">Trello</span>
+                <span class="bar-track"><span class="bar-fill" style="--w:76.25%"></span></span>
+                <span class="bar-val"><b>3.05</b><span>/4</span></span>
+              </div>
+              <div class="bar-row" title="Notion · 2.95 de 4.00">
+                <span class="bar-label">Notion</span>
+                <span class="bar-track"><span class="bar-fill" style="--w:73.75%"></span></span>
+                <span class="bar-val"><b>2.95</b><span>/4</span></span>
+              </div>
+            </div>
+            <div class="chart-legend"><span><i class="legend-us"></i>TaskU</span><span><i class="legend-other"></i>Alternativas evaluadas</span></div>
+          </div>
+
+          <div class="h3">Matriz comparativa detallada</div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Factor crítico</th><th class="num">Peso</th>
+                  <th class="center">TaskU</th><th class="center">Google Tasks + Cal.</th>
+                  <th class="center">Notion</th><th class="center">Trello</th><th class="center">MS To Do</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Facilidad de uso</strong></td><td class="num">0.20</td><td class="center r4">0.80 <small>(4)</small></td><td class="center r4">0.80 <small>(4)</small></td><td class="center r2">0.40 <small>(2)</small></td><td class="center r3">0.60 <small>(3)</small></td><td class="center r4">0.80 <small>(4)</small></td></tr>
+                <tr><td><strong>Adaptación académica</strong></td><td class="num">0.20</td><td class="center r4">0.80 <small>(4)</small></td><td class="center r2">0.40 <small>(2)</small></td><td class="center r3">0.60 <small>(3)</small></td><td class="center r2">0.40 <small>(2)</small></td><td class="center r2">0.40 <small>(2)</small></td></tr>
+                <tr><td><strong>Recordatorios y alertas</strong></td><td class="num">0.15</td><td class="center r3">0.45 <small>(3)</small></td><td class="center r4">0.60 <small>(4)</small></td><td class="center r3">0.45 <small>(3)</small></td><td class="center r3">0.45 <small>(3)</small></td><td class="center r4">0.60 <small>(4)</small></td></tr>
+                <tr><td><strong>Trabajo colaborativo</strong></td><td class="num">0.15</td><td class="center r4">0.60 <small>(4)</small></td><td class="center r2">0.30 <small>(2)</small></td><td class="center r4">0.60 <small>(4)</small></td><td class="center r4">0.60 <small>(4)</small></td><td class="center r3">0.45 <small>(3)</small></td></tr>
+                <tr><td><strong>Funcionamiento sin Internet</strong></td><td class="num">0.10</td><td class="center r4">0.40 <small>(4)</small></td><td class="center r3">0.30 <small>(3)</small></td><td class="center r2">0.20 <small>(2)</small></td><td class="center r2">0.20 <small>(2)</small></td><td class="center r3">0.30 <small>(3)</small></td></tr>
+                <tr><td><strong>Accesibilidad económica</strong></td><td class="num">0.10</td><td class="center r3">0.30 <small>(3)</small></td><td class="center r4">0.40 <small>(4)</small></td><td class="center r3">0.30 <small>(3)</small></td><td class="center r4">0.40 <small>(4)</small></td><td class="center r4">0.40 <small>(4)</small></td></tr>
+                <tr><td><strong>Reconocimiento y confianza</strong></td><td class="num">0.10</td><td class="center r1">0.10 <small>(1)</small></td><td class="center r4">0.40 <small>(4)</small></td><td class="center r4">0.40 <small>(4)</small></td><td class="center r4">0.40 <small>(4)</small></td><td class="center r4">0.40 <small>(4)</small></td></tr>
+                <tr class="total-row"><td>Total ponderado</td><td class="num">1.00</td><td class="center">3.45</td><td class="center">3.20</td><td class="center">2.95</td><td class="center">3.05</td><td class="center">3.35</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="chart-note">Calificación 4 = fortaleza importante · 3 = fortaleza menor · 2 = debilidad menor · 1 = debilidad importante. Las calificaciones son estimaciones académicas de las funcionalidades previstas de TaskU y de las características generales de las alternativas.</p>
+
+          <div class="callout warn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 2 21h20L12 3Z"/><path d="M12 9v5M12 17h.01"/></svg>
+            <p><strong>Nota de consistencia:</strong> el documento original presenta dos juegos de totales. Las tablas detalladas suman TaskU 3.45, Microsoft To Do 3.35, Google 3.20, Trello 3.05 y Notion 2.95; el resumen y la conclusión citan 3.50, 3.20, 3.20, 2.85 y 2.95. Esta página usa los totales calculados de la matriz detallada, reproducibles a partir de pesos y calificaciones.</p>
+          </div>
+
+          <div class="h3">Hallazgos principales</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Aspecto</th><th>Hallazgo</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Principal fortaleza</strong></td><td>Especialización en tareas, exámenes y proyectos universitarios.</td></tr>
+                <tr><td><strong>Ventaja diferenciadora</strong></td><td>Integración propuesta de organización académica, colaboración y acceso sin Internet.</td></tr>
+                <tr><td><strong>Principal debilidad</strong></td><td>Ausencia de reconocimiento de marca y de una base consolidada de usuarios.</td></tr>
+                <tr><td><strong>Principal amenaza</strong></td><td>Alternativas gratuitas con funciones maduras y reconocimiento internacional.</td></tr>
+                <tr><td><strong>Oportunidad local</strong></td><td>Pruebas piloto y promoción directa en universidades de Quetzaltenango.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="h3">Análisis competitivo</div>
+          <p>TaskU busca diferenciarse por su enfoque específico en la vida académica universitaria, con registro rápido de tareas, recordatorios, proyectos grupales y consulta sin conexión. Sin embargo, el modelo freemium propone un máximo de tres tareas activas para la versión gratuita, mientras que varias alternativas del mercado ofrecen funciones de gestión sin una barrera equivalente. Esta restricción puede favorecer la conversión a Premium, pero también provocar abandono si los estudiantes perciben insuficiente valor inicial.</p>
+          <p>Google Tasks y Calendar y Microsoft To Do son competidores relevantes por su simplicidad y sus funciones de organización y avisos. Notion y Trello destacan por sus capacidades de estructuración y colaboración. Por ello, el posicionamiento de TaskU debe basarse en una experiencia académica más directa y fácil de usar, y no únicamente en ofrecer funciones que otras plataformas ya poseen.</p>
+
+          <div class="h3">Recomendaciones estratégicas</div>
+          <div class="grid-2">
+            <div class="panel">
+              <h4>Posicionamiento y producto</h4>
+              <ol style="margin:0;padding-left:18px">
+                <li>Posicionar TaskU como una aplicación enfocada en estudiantes universitarios de Guatemala, destacando rapidez y sencillez.</li>
+                <li>Evaluar con pruebas de usuarios si el límite de tres tareas activas es aceptable; considerar una modalidad gratuita más útil si hay abandono temprano.</li>
+                <li>Diferenciar Premium con tableros colaborativos, respaldo automático y ventajas que justifiquen un pago único.</li>
+              </ol>
+            </div>
+            <div class="panel">
+              <h4>Validación y medición</h4>
+              <ol start="4" style="margin:0;padding-left:18px">
+                <li>Ejecutar pruebas piloto con estudiantes de la Universidad Mesoamericana y ampliar a otras instituciones de Quetzaltenango.</li>
+                <li>Medir uso recurrente, satisfacción, tasa de conversión y disposición real de pago antes de asumir viabilidad comercial.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="h3">Conclusión</div>
+          <p>La Matriz de Perfil Competitivo permite comparar preliminarmente la propuesta de valor de TaskU con alternativas de productividad disponibles para estudiantes universitarios de Quetzaltenango. TaskU alcanza una puntuación estimada de 3.45, seguido de Microsoft To Do (3.35), Google Tasks y Calendar (3.20), Trello (3.05) y Notion (2.95). Su principal oportunidad competitiva reside en la especialización académica, mientras que sus retos más importantes son el reconocimiento de marca, la aceptación de las limitaciones de la versión gratuita y la competencia de aplicaciones consolidadas.</p>
+          <div class="callout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+            <p><strong>Nota metodológica:</strong> la matriz corresponde a un ejercicio de análisis estratégico con ponderaciones y calificaciones estimadas. No se dispone de evidencia suficiente para afirmar cuáles aplicaciones tienen mayor participación entre estudiantes de Quetzaltenango. Las puntuaciones deben actualizarse con evaluación empírica e información del mercado objetivo.</p>
+          </div>
+        </div>
+      </details>
+
+      <div class="group-intro" id="diagnostico">
+        <span class="eyebrow">Análisis estratégico · valor agregado</span>
+        <h2>Diagnóstico interno y externo</h2>
+        <p>Las matrices EFI y EFE traducen la evidencia del proyecto en una posición estratégica medible. El análisis PESTEL completa la lectura con el entorno político, económico, social, tecnológico, ecológico y legal. Los pesos y calificaciones son estimaciones académicas construidas a partir de los cinco documentos, no mediciones de mercado.</p>
+        <div class="group-chips">
+          <span class="chip"><span class="dot"></span>11 factores internos</span>
+          <span class="chip"><span class="dot"></span>13 factores externos</span>
+          <span class="chip"><span class="dot"></span>6 dimensiones PESTEL</span>
+        </div>
+      </div>
+
+      <details class="acc" id="efi">
+        <summary>
+          <span class="acc-index">04</span>
+          <span class="acc-head">
+            <span class="acc-kicker">Diagnóstico interno</span>
+            <span class="acc-title">Matriz EFI · Evaluación de Factores Internos</span>
+            <span class="acc-desc">Fortalezas y debilidades de TaskU ponderadas y calificadas. Resultado: 2.85 / 4.00.</span>
+          </span>
+          <span class="acc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+        </summary>
+        <div class="acc-body">
+          <p class="lead">La EFI evalúa los recursos y capacidades que TaskU controla. Se identificaron siete fortalezas y cuatro debilidades; los pesos suman 1.00 y la calificación va de 1 (debilidad importante) a 4 (fortaleza importante). Un total superior a 2.50 indica que las fortalezas pesan más que las debilidades.</p>
+
+          <div class="method">
+            <div><span class="m-v">11</span><span class="m-l">factores internos</span></div>
+            <div><span class="m-v">1.00</span><span class="m-l">suma de pesos</span></div>
+            <div><span class="m-v">1–4</span><span class="m-l">escala de calificación</span></div>
+            <div><span class="m-v">2.85</span><span class="m-l">puntaje ponderado</span></div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Factor interno</th><th class="num">Peso</th><th class="center">Calif.</th><th class="num">Ponderado</th><th>Sustento</th></tr></thead>
+              <tbody>
+                <tr><td><span class="tag f">F</span> <strong>Especialización en gestión académica</strong></td><td class="num">0.15</td><td class="center">4</td><td class="num">0.60</td><td>Tareas, exámenes y proyectos en un solo flujo; ninguna alternativa local se enfoca en esa combinación.</td></tr>
+                <tr><td><span class="tag f">F</span> <strong>Operación offline-first</strong></td><td class="num">0.12</td><td class="center">4</td><td class="num">0.48</td><td>SQLite/Hive permite consultar pendientes sin Internet; el 70 % del sondeo lo valora con 4 o 5.</td></tr>
+                <tr><td><span class="tag f">F</span> <strong>Simplicidad de uso</strong></td><td class="num">0.12</td><td class="center">4</td><td class="num">0.48</td><td>Registro en pocos toques; ataca la principal barrera frente a Notion o ClickUp.</td></tr>
+                <tr><td><span class="tag f">F</span> <strong>Freemium con pago único</strong></td><td class="num">0.10</td><td class="center">3</td><td class="num">0.30</td><td>Barrera de entrada baja; el 64 % declara disposición a algún pago.</td></tr>
+                <tr><td><span class="tag f">F</span> <strong>Base técnica Flutter + MVVM</strong></td><td class="num">0.08</td><td class="center">3</td><td class="num">0.24</td><td>Un solo código para Android e iOS, con una arquitectura mantenible.</td></tr>
+                <tr><td><span class="tag f">F</span> <strong>Colaboración y nube en Premium</strong></td><td class="num">0.08</td><td class="center">3</td><td class="num">0.24</td><td>El 46 % participa frecuente o muy frecuentemente en proyectos grupales.</td></tr>
+                <tr><td><span class="tag f">F</span> <strong>Roles de equipo definidos</strong></td><td class="num">0.05</td><td class="center">3</td><td class="num">0.15</td><td>PM, arquitectura, UX, QA y release reducen el retrabajo y ordenan el alcance.</td></tr>
+                <tr><td><span class="tag d">D</span> <strong>Marca y base de usuarios inexistentes</strong></td><td class="num">0.13</td><td class="center">1</td><td class="num">0.13</td><td>Calificación de 1 en reconocimiento dentro de la MPC; los competidores tienen adopción masiva.</td></tr>
+                <tr><td><span class="tag d">D</span> <strong>Límite de 3 tareas gratis</strong></td><td class="num">0.11</td><td class="center">1</td><td class="num">0.11</td><td>Solo el 16 % lo considera suficiente; el 46 % preferiría cinco o no usaría la app.</td></tr>
+                <tr><td><span class="tag d">D</span> <strong>Ingresos concentrados</strong></td><td class="num">0.03</td><td class="center">2</td><td class="num">0.06</td><td>AdMob más la comisión de tiendas (15–30 %), sin ingresos diversificados.</td></tr>
+                <tr><td><span class="tag d">D</span> <strong>Premium aún sin validar</strong></td><td class="num">0.03</td><td class="center">2</td><td class="num">0.06</td><td>Tableros, nube y PDF no se han probado con usuarios reales; riesgo de sobreproducción.</td></tr>
+                <tr class="total-row"><td>Total EFI</td><td class="num">1.00</td><td></td><td class="num">2.85</td><td>Posición interna por encima del promedio.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="meter-card">
+            <div>
+              <h4>Puntaje EFI</h4>
+              <div class="meter-value">2.85 <small>/ 4.00</small></div>
+            </div>
+            <div style="text-align:right;font-size:.78rem;color:var(--ink-2)">
+              <div><strong>Fortalezas:</strong> 2.49</div>
+              <div><strong>Debilidades:</strong> 0.36</div>
+            </div>
+            <div class="meter" aria-hidden="true">
+              <div class="meter-fill" style="--w:61.7%"></div>
+              <div class="meter-mid"><span>promedio 2.50</span></div>
+            </div>
+            <div class="meter-scale"><span>1.00</span><span>2.00</span><span>3.00</span><span>4.00</span></div>
+          </div>
+
+          <div class="grid-3" style="margin-top:18px">
+            <div class="panel accent">
+              <h4>Lo que sostiene la posición</h4>
+              <p style="font-size:.83rem;margin:0">La especialización académica, la simplicidad y el funcionamiento sin Internet concentran 1.56 puntos ponderados: son la base sobre la que debe construirse el MVP.</p>
+            </div>
+            <div class="panel">
+              <h4>Lo que frena la posición</h4>
+              <p style="font-size:.83rem;color:var(--ink-2);margin:0">La marca y el límite de tres tareas aportan solo 0.24 puntos y explican la mayor parte de la debilidad interna. La segunda es corregible con una prueba A/B.</p>
+            </div>
+            <div class="panel">
+              <h4>Lectura estratégica</h4>
+              <p style="font-size:.83rem;color:var(--ink-2);margin:0">Con 2.85, TaskU tiene una posición interna favorable pero frágil: sus fortalezas son de producto, sus debilidades son de mercado y de calibración del modelo.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="acc" id="efe">
+        <summary>
+          <span class="acc-index">05</span>
+          <span class="acc-head">
+            <span class="acc-kicker">Diagnóstico externo</span>
+            <span class="acc-title">Matriz EFE · Evaluación de Factores Externos</span>
+            <span class="acc-desc">Ocho oportunidades y cinco amenazas del entorno. Resultado: 2.79 / 4.00.</span>
+          </span>
+          <span class="acc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+        </summary>
+        <div class="acc-body">
+          <p class="lead">La EFE mide cómo responde TaskU a las oportunidades y amenazas del entorno. Los pesos suman 1.00 y la calificación expresa la calidad de la respuesta: 1 = respuesta pobre, 2 = promedio, 3 = superior al promedio, 4 = respuesta superior. Un total mayor a 2.50 indica que la empresa aprovecha razonablemente su entorno.</p>
+
+          <div class="method">
+            <div><span class="m-v">13</span><span class="m-l">factores externos</span></div>
+            <div><span class="m-v">1.00</span><span class="m-l">suma de pesos</span></div>
+            <div><span class="m-v">1–4</span><span class="m-l">calidad de respuesta</span></div>
+            <div><span class="m-v">2.79</span><span class="m-l">puntaje ponderado</span></div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Factor externo</th><th class="num">Peso</th><th class="center">Calif.</th><th class="num">Ponderado</th><th>Sustento</th></tr></thead>
+              <tbody>
+                <tr><td><span class="tag o">O</span> <strong>Demanda por organización académica</strong></td><td class="num">0.14</td><td class="center">4</td><td class="num">0.56</td><td>El 74 % reporta cuatro o más pendientes por semana; el problema es frecuente.</td></tr>
+                <tr><td><span class="tag o">O</span> <strong>Intención declarada de uso</strong></td><td class="num">0.10</td><td class="center">3</td><td class="num">0.30</td><td>El 72 % expresa intención positiva; es interés, no adopción comprobada.</td></tr>
+                <tr><td><span class="tag o">O</span> <strong>Digitalización pendiente</strong></td><td class="num">0.10</td><td class="center">3</td><td class="num">0.30</td><td>El 64 % todavía usa notas del celular, cuaderno o ninguna herramienta.</td></tr>
+                <tr><td><span class="tag o">O</span> <strong>Convenios institucionales B2B</strong></td><td class="num">0.09</td><td class="center">3</td><td class="num">0.27</td><td>Universidades y facultades como canal de licencias por semestre.</td></tr>
+                <tr><td><span class="tag o">O</span> <strong>Proyectos grupales frecuentes</strong></td><td class="num">0.08</td><td class="center">3</td><td class="num">0.24</td><td>El 46 % participa frecuente o muy frecuentemente en trabajos en equipo.</td></tr>
+                <tr><td><span class="tag o">O</span> <strong>Acceso sin Internet</strong></td><td class="num">0.08</td><td class="center">3</td><td class="num">0.24</td><td>El 70 % lo considera importante o indispensable.</td></tr>
+                <tr><td><span class="tag o">O</span> <strong>Disposición de pago</strong></td><td class="num">0.06</td><td class="center">3</td><td class="num">0.18</td><td>El 64 % consideraría pagar, sobre todo por debajo de US$10.</td></tr>
+                <tr><td><span class="tag o">O</span> <strong>Crecimiento de la educación digital</strong></td><td class="num">0.05</td><td class="center">2</td><td class="num">0.10</td><td>Tendencia favorable, pero sin datos locales que permitan cuantificarla.</td></tr>
+                <tr><td><span class="tag a">A</span> <strong>Competencia consolidada y gratuita</strong></td><td class="num">0.12</td><td class="center">2</td><td class="num">0.24</td><td>Google, Microsoft, Notion y Trello ofrecen versiones gratuitas maduras y reconocidas.</td></tr>
+                <tr><td><span class="tag a">A</span> <strong>Sensibilidad al precio</strong></td><td class="num">0.07</td><td class="center">2</td><td class="num">0.14</td><td>El 36 % no pagaría y el 34 % pagaría menos de US$5.</td></tr>
+                <tr><td><span class="tag a">A</span> <strong>Comisiones de las tiendas</strong></td><td class="num">0.04</td><td class="center">2</td><td class="num">0.08</td><td>Entre 15 % y 30 % del ingreso por venta se queda en la plataforma.</td></tr>
+                <tr><td><span class="tag a">A</span> <strong>Publicidad invasiva</strong></td><td class="num">0.04</td><td class="center">2</td><td class="num">0.08</td><td>El 30 % tolera poco la publicidad; el formato debe ser discreto y no interrumpir.</td></tr>
+                <tr><td><span class="tag a">A</span> <strong>Políticas de plataforma</strong></td><td class="num">0.03</td><td class="center">2</td><td class="num">0.06</td><td>Cambios en privacidad, AdMob o revisión de apps pueden alterar el modelo.</td></tr>
+                <tr class="total-row"><td>Total EFE</td><td class="num">1.00</td><td></td><td class="num">2.79</td><td>Respuesta externa ligeramente superior al promedio.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="meter-card">
+            <div>
+              <h4>Puntaje EFE</h4>
+              <div class="meter-value">2.79 <small>/ 4.00</small></div>
+            </div>
+            <div style="text-align:right;font-size:.78rem;color:var(--ink-2)">
+              <div><strong>Oportunidades:</strong> 2.19</div>
+              <div><strong>Amenazas:</strong> 0.60</div>
+            </div>
+            <div class="meter" aria-hidden="true">
+              <div class="meter-fill" style="--w:59.7%"></div>
+              <div class="meter-mid"><span>promedio 2.50</span></div>
+            </div>
+            <div class="meter-scale"><span>1.00</span><span>2.00</span><span>3.00</span><span>4.00</span></div>
+          </div>
+
+          <div class="grid-3" style="margin-top:18px">
+            <div class="panel accent">
+              <h4>La oportunidad mayor</h4>
+              <p style="font-size:.83rem;margin:0">La demanda declarada —74 % con cuatro o más pendientes— y la intención de uso —72 %— son la base del caso de negocio, siempre que se conviertan en uso real.</p>
+            </div>
+            <div class="panel">
+              <h4>La amenaza mayor</h4>
+              <p style="font-size:.83rem;color:var(--ink-2);margin:0">La competencia gratuita consolidada y la sensibilidad al precio. TaskU no puede ganar por cantidad de funciones ni por precio: debe ganar por enfoque académico.</p>
+            </div>
+            <div class="panel">
+              <h4>Lectura estratégica</h4>
+              <p style="font-size:.83rem;color:var(--ink-2);margin:0">Con 2.79, el entorno es aprovechable, pero la respuesta a las amenazas es solo promedio. La validación empírica y el canal universitario son las palancas inmediatas.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="acc" id="pestel">
+        <summary>
+          <span class="acc-index">06</span>
+          <span class="acc-head">
+            <span class="acc-kicker">Entorno</span>
+            <span class="acc-title">Análisis PESTEL</span>
+            <span class="acc-desc">Seis dimensiones del entorno que condicionan el lanzamiento y la sostenibilidad de TaskU.</span>
+          </span>
+          <span class="acc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+        </summary>
+        <div class="acc-body">
+          <p class="lead">El PESTEL ordena las fuerzas externas que no dependen de TaskU. Cada dimensión se lee con su efecto sobre el proyecto y una implicación concreta; los chips indican si el entorno empuja, presiona o exige cumplimiento.</p>
+
+          <div class="pestel-grid">
+            <div class="pestel-card">
+              <div class="pestel-letter">P</div>
+              <div>
+                <h4>Político</h4>
+                <div class="impact">Gobernanza y prioridades públicas</div>
+                <ul>
+                  <li>La digitalización educativa gana espacio en agendas universitarias y programas de conectividad.</li>
+                  <li>Estabilidad macroeconómica relativa, con cambios regulatorios posibles según el ciclo electoral.</li>
+                  <li>Apoyo a emprendimiento tecnológico, pero sin incentivos específicos garantizados para una app estudiantil.</li>
+                </ul>
+                <span class="impact-chip good"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>Favorable moderado</span>
+              </div>
+            </div>
+
+            <div class="pestel-card">
+              <div class="pestel-letter">E</div>
+              <div>
+                <h4>Económico</h4>
+                <div class="impact">Poder adquisitivo y costos</div>
+                <ul>
+                  <li>Presupuesto estudiantil limitado: 36 % no pagaría y 34 % pagaría menos de US$5.</li>
+                  <li>Inflación y costo de vida presionan la disposición a pagar por apps no esenciales.</li>
+                  <li>Costos cloud en dólares y comisiones de tienda de 15–30 % reducen el margen.</li>
+                  <li>Tipo de cambio del quetzal frente al dólar afecta la infraestructura.</li>
+                </ul>
+                <span class="impact-chip warn"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>Presión sobre el precio</span>
+              </div>
+            </div>
+
+            <div class="pestel-card">
+              <div class="pestel-letter">S</div>
+              <div>
+                <h4>Social</h4>
+                <div class="impact">Hábitos y cultura académica</div>
+                <ul>
+                  <li>74 % con cuatro o más pendientes semanales; 70 % olvida o entrega tarde al menos a veces.</li>
+                  <li>El smartphone es el dispositivo principal de consulta; la adopción móvil es alta.</li>
+                  <li>46 % participa con frecuencia en proyectos grupales: la colaboración es una necesidad real.</li>
+                  <li>Preferencia por la simplicidad y desconfianza inicial hacia apps nuevas.</li>
+                </ul>
+                <span class="impact-chip good"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>Favorable</span>
+              </div>
+            </div>
+
+            <div class="pestel-card">
+              <div class="pestel-letter">T</div>
+              <div>
+                <h4>Tecnológico</h4>
+                <div class="impact">Herramientas y madurez técnica</div>
+                <ul>
+                  <li>Flutter permite una sola base de código para Android e iOS; Firebase o AWS cubren sincronización.</li>
+                  <li>Offline-first con SQLite/Hive responde a la valoración del acceso sin conexión.</li>
+                  <li>La IA aplicada a recordatorios y priorización es una tendencia aprovechable en fase 2.</li>
+                  <li>Fragmentación de Android y equipos de gama media exigen rendimiento moderado; la ciberseguridad y el respaldo son obligatorios.</li>
+                </ul>
+                <span class="impact-chip good"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>Favorable</span>
+              </div>
+            </div>
+
+            <div class="pestel-card">
+              <div class="pestel-letter">E</div>
+              <div>
+                <h4>Ecológico</h4>
+                <div class="impact">Huella ambiental</div>
+                <ul>
+                  <li>El almacenamiento en la nube y los dispositivos implican consumo energético y residuos electrónicos.</li>
+                  <li>La arquitectura offline-first reduce tráfico de datos y dependencia de servidores: menor huella por consulta.</li>
+                  <li>Crece la expectativa de eficiencia energética en productos digitales, aunque el impacto directo de TaskU es bajo.</li>
+                </ul>
+                <span class="impact-chip good"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>Bajo y alineado</span>
+              </div>
+            </div>
+
+            <div class="pestel-card">
+              <div class="pestel-letter">L</div>
+              <div>
+                <h4>Legal</h4>
+                <div class="impact">Cumplimiento y confianza</div>
+                <ul>
+                  <li>El marco de protección de datos personales en Guatemala está en evolución: consentimiento, minimización y resguardo.</li>
+                  <li>Google Play y App Store imponen reglas de privacidad, pagos y contenido; su incumplimiento bloquea la distribución.</li>
+                  <li>Las pasarelas de pago y la facturación electrónica añaden obligaciones administrativas.</li>
+                  <li>La información académica y los contenidos de terceros requieren cuidado de propiedad intelectual y derechos del consumidor.</li>
+                </ul>
+                <span class="impact-chip serious"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>Exige cumplimiento</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="h3">Síntesis PESTEL</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Dimensión</th><th>Señal clave</th><th>Efecto sobre TaskU</th><th class="center">Intensidad</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Político</strong></td><td>Digitalización educativa y apoyo al emprendimiento.</td><td>Ventana favorable para pilotos universitarios; dependencia de prioridades institucionales.</td><td class="center"><span class="tag neutral">Media</span></td></tr>
+                <tr><td><strong>Económico</strong></td><td>Bajo presupuesto estudiantil y comisiones de tienda.</td><td>Limita el precio del pase Premium y presiona el margen.</td><td class="center"><span class="tag a">Alta</span></td></tr>
+                <tr><td><strong>Social</strong></td><td>Alta carga académica y olvidos frecuentes.</td><td>Valida el problema y la propuesta de simplicidad; exige confianza.</td><td class="center"><span class="tag o">Alta</span></td></tr>
+                <tr><td><strong>Tecnológico</strong></td><td>Flutter, nube y offline-first disponibles.</td><td>Viabiliza el producto con un equipo pequeño; exige mantenimiento.</td><td class="center"><span class="tag o">Alta</span></td></tr>
+                <tr><td><strong>Ecológico</strong></td><td>Eficiencia energética y huella digital.</td><td>Impacto bajo; el modo offline es un argumento de eficiencia.</td><td class="center"><span class="tag neutral">Baja</span></td></tr>
+                <tr><td><strong>Legal</strong></td><td>Privacidad, reglas de tiendas y facturación.</td><td>Obliga a diseñar consentimiento, respaldo y pagos desde el inicio.</td><td class="center"><span class="tag a">Alta</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="h3">Lectura integrada · posición estratégica</div>
+          <p>Con <strong>EFI 2.85</strong> y <strong>EFE 2.79</strong>, TaskU se ubica en el cuadrante de <strong>crecer y construir</strong> de la matriz IE: sus fortalezas internas superan ligeramente sus debilidades y su respuesta al entorno es algo mejor que el promedio. La conclusión no es que el negocio esté validado, sino que existen condiciones para invertir en validación, producto y marca local antes de escalar.</p>
+          <div class="strategy-grid">
+            <div class="strategy">
+              <span class="n">1</span>
+              <div><h4>Congelar el MVP</h4><p>Registro rápido, recordatorios, offline y respaldo JSON. Mover tableros, nube y PDF a fase 2, como propone el análisis Muda.</p></div>
+            </div>
+            <div class="strategy">
+              <span class="n">2</span>
+              <div><h4>Recalibrar el límite gratuito</h4><p>Probar 3 vs. 5 tareas activas. El 46 % preferiría cinco o no usaría la app; es la debilidad interna más corregible.</p></div>
+            </div>
+            <div class="strategy">
+              <span class="n">3</span>
+              <div><h4>Construir marca y confianza</h4><p>El reconocimiento es la calificación más baja de la MPC. Pilotos en la Universidad Mesoamericana y testimonios locales son la vía más barata.</p></div>
+            </div>
+            <div class="strategy">
+              <span class="n">4</span>
+              <div><h4>Activar el canal universitario</h4><p>Convenios y licencias por semestre convierten la oportunidad B2B en ingreso recurrente y reducen la dependencia de AdMob.</p></div>
+            </div>
+          </div>
+
+          <div class="callout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+            <p><strong>Alcance del diagnóstico:</strong> EFI, EFE y PESTEL son análisis académicos construidos con la información de los cinco documentos. Los pesos y calificaciones no provienen de una muestra representativa ni de mediciones de mercado; deben revisarse con evidencia empírica antes de tomar decisiones de inversión.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="acc" id="muda">
+        <summary>
+          <span class="acc-index">07</span>
+          <span class="acc-head">
+            <span class="acc-kicker">Mejora de procesos</span>
+            <span class="acc-title">Análisis Muda</span>
+            <span class="acc-desc">El desperdicio principal de TaskU: construir funciones Premium antes de validar el MVP.</span>
+          </span>
+          <span class="acc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+        </summary>
+        <div class="acc-body">
+          <p class="lead">TaskU es una aplicación móvil en Flutter para estudiantes universitarios de Quetzaltenango. Centraliza tareas, exámenes y proyectos; funciona sin Internet; ofrece hasta tres tareas activas gratis, publicidad AdMob y un pase Premium de pago único con tableros grupales, nube, PDF y sin anuncios. El análisis Muda busca el desperdicio que más afecta esa promesa.</p>
+
+          <div class="muda-main">
+            <div>
+              <div class="kicker">Desperdicio identificado</div>
+              <h4>Sobreproducción</h4>
+              <p>Construir funciones Premium y actividades de promoción demasiado amplias antes de validar el núcleo del MVP: tableros grupales, sincronización en la nube, exportación a PDF, eliminación de anuncios, promoción en campus, redes sociales y varias líneas de crecimiento. Si el equipo intenta desarrollar todo eso antes de comprobar que el registro rápido, las alertas y el funcionamiento sin Internet realmente resuelven el problema de Diego, está produciendo más de lo que el cliente necesita en esta etapa.</p>
+            </div>
+            <div class="badge" aria-hidden="true">Muda<br>principal</div>
+          </div>
+
+          <div class="h3">Clasificación entre los siete desperdicios</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Muda</th><th>Aplicación en TaskU</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Sobreproducción</strong></td><td>Construir tableros, nube y PDF antes de validar el MVP.</td></tr>
+                <tr><td><strong>Puede derivar en extraproceso</strong></td><td>Agregar campos o pasos innecesarios al registro de tareas, cuando la promesa es “registrar en segundos”.</td></tr>
+                <tr><td><strong>Puede derivar en defectos</strong></td><td>Más funciones sin validar = más bugs, retrabajo y carga para QA.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="h3">Evidencia en los documentos</div>
+          <div class="kpi-row">
+            <div class="kpi"><div class="v">66 %</div><div class="l">prioriza alertas o registro rápido</div><div class="s">Sondeo · P6</div></div>
+            <div class="kpi"><div class="v">70 %</div><div class="l">olvida o entrega tarde al menos ocasionalmente</div><div class="s">Sondeo · P3</div></div>
+            <div class="kpi"><div class="v">74 %</div><div class="l">tiene cuatro o más pendientes por semana</div><div class="s">Sondeo · P2</div></div>
+            <div class="kpi"><div class="v">16 %</div><div class="l">considera suficiente el límite de 3 tareas gratis</div><div class="s">Sondeo · P11</div></div>
+          </div>
+          <p>El informe recomienda como MVP el registro de tareas en pocos pasos, alertas confiables y consulta sin conexión. Eso respalda no sobrecargar la primera versión con funciones Premium.</p>
+
+          <div class="h3">Cómo eliminar ese Muda</div>
+          <div class="grid-2">
+            <div class="panel">
+              <h4>Alcance y fases</h4>
+              <ol style="margin:0;padding-left:18px">
+                <li><strong>Congelar el alcance del MVP:</strong> registro rápido, recordatorios, funcionamiento offline y exportación manual JSON.</li>
+                <li><strong>Mover a fase 2 / Premium:</strong> tableros grupales, respaldo automático en la nube, PDF y eliminación de anuncios.</li>
+                <li><strong>Probar el límite gratuito:</strong> comparar 3 vs. 5 tareas activas antes de asumir que la barrera de 3 convierte bien.</li>
+              </ol>
+            </div>
+            <div class="panel">
+              <h4>Equipo y medición</h4>
+              <ol start="4" style="margin:0;padding-left:18px">
+                <li><strong>Usar los roles semanales para evitar retrabajo:</strong> PM define criterios de aceptación; arquitectura mantiene el repositorio y MVVM; UX valida el flujo en pocos pasos; QA prueba casos límite; release empaqueta solo lo aprobado.</li>
+                <li><strong>Medir con métricas reales:</strong> tiempo para registrar una tarea, tareas registradas, retención, uso de alertas, llegada al límite y conversión efectiva a Premium.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="h3">Qué ganaría el cliente</div>
+          <div class="grid-2">
+            <div class="panel">
+              <h4>Diego Morales, estudiante universitario</h4>
+              <ul>
+                <li>Una app más simple y rápida, sin configuración compleja.</li>
+                <li>Recordatorios confiables para no olvidar entregas.</li>
+                <li>Acceso a pendientes sin Internet.</li>
+                <li>Posibilidad de probar el valor real antes de pagar.</li>
+                <li>Menos frustración por funciones que aún no necesita.</li>
+              </ul>
+            </div>
+            <div class="panel accent">
+              <h4>Ganancia para TaskU</h4>
+              <p style="font-size:.86rem;margin:0">Menor carga de desarrollo y QA, lanzamiento más rápido, menos bugs y mejor evidencia para decidir qué funciones Premium justifican el pago único.</p>
+            </div>
+          </div>
+
+          <div class="h3">Resumen listo para exponer</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Elemento</th><th>Respuesta</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Proyecto</strong></td><td>TaskU</td></tr>
+                <tr><td><strong>Muda identificado</strong></td><td>Sobreproducción</td></tr>
+                <tr><td><strong>Clasificación</strong></td><td>Producir más de lo necesario o antes de tiempo: construir funciones Premium antes de validar el MVP.</td></tr>
+                <tr><td><strong>Evidencia</strong></td><td>El sondeo prioriza alertas, registro rápido y offline; el límite de 3 tareas genera fricción; el informe recomienda un MVP simple.</td></tr>
+                <tr><td><strong>Cómo eliminarlo</strong></td><td>Congelar el MVP, mover tableros/nube/PDF a fase 2, validar 3 vs. 5 tareas y medir retención y conversión.</td></tr>
+                <tr><td><strong>Ganancia para el cliente</strong></td><td>App más sencilla, útil desde el inicio, sin pasos innecesarios y con valor comprobable antes de pagar.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="h3">Otros Muda posibles en TaskU</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Muda</th><th>Ejemplo en TaskU</th><th>Cómo eliminarlo</th><th>Ganancia para el cliente</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Defectos</strong></td><td>Límite de 3 tareas gratis mal calibrado que provoca abandono.</td><td>Probar 3 vs. 5 tareas y ajustar según retención.</td><td>Experiencia gratuita más útil.</td></tr>
+                <tr><td><strong>Espera</strong></td><td>El usuario espera aprobación o pago para acceder a funciones básicas.</td><td>Mantener el valor central gratis y dejar Premium para funciones avanzadas.</td><td>Empieza a organizarse sin fricción.</td></tr>
+                <tr><td><strong>Extraproceso</strong></td><td>Registro con demasiados campos obligatorios.</td><td>Registro en pocos toques; campos opcionales después.</td><td>Menos tiempo organizando.</td></tr>
+                <tr><td><strong>Transporte</strong></td><td>Usar varias apps o pasar información de cuaderno a celular.</td><td>Centralizar tareas, exámenes y proyectos en TaskU.</td><td>Toda la información en un solo lugar.</td></tr>
+                <tr><td><strong>Inventario</strong></td><td>Funciones o campañas listas que no se usan.</td><td>Lanzar solo lo validado y medir uso real.</td><td>Producto más enfocado.</td></tr>
+                <tr><td><strong>Movimiento</strong></td><td>Reuniones o cambios de alcance innecesarios.</td><td>Kanban semanal y criterios de aceptación claros.</td><td>Entregas más rápidas y estables.</td></tr>
+                <tr><td><strong>Sobreproducción</strong></td><td>Construir todo el Premium antes del MVP.</td><td>Fases: MVP → validación → Premium.</td><td>App simple y funcional desde el inicio.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="acc" id="sondeo">
+        <summary>
+          <span class="acc-index">08</span>
+          <span class="acc-head">
+            <span class="acc-kicker">Investigación</span>
+            <span class="acc-title">Sondeo de productividad académica</span>
+            <span class="acc-desc">50 perfiles sintéticos, 12 preguntas y las señales que orientan el MVP de TaskU.</span>
+          </span>
+          <span class="acc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
+        </summary>
+        <div class="acc-body">
+          <div class="grid-2">
+            <div>
+              <p class="lead"><strong>Objetivo:</strong> explorar hábitos de organización académica, dificultades, preferencias funcionales y aceptación preliminar del modelo gratuito/Premium de TaskU, una app móvil para registrar tareas, exámenes y proyectos, con acceso local y funciones avanzadas de pago único.</p>
+            </div>
+            <div class="panel">
+              <h4>Diseño del instrumento</h4>
+              <ul style="list-style:none;padding:0">
+                <li><strong>Muestra:</strong> 50 perfiles sintéticos.</li>
+                <li><strong>Instrumento:</strong> 12 preguntas.</li>
+                <li><strong>Diseño:</strong> encuesta descriptiva transversal.</li>
+                <li><strong>Fecha:</strong> octubre de 2026.</li>
+                <li><strong>Límite:</strong> sin muestreo real ni pruebas de significancia; los porcentajes se calculan sobre 50 respuestas.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout warn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 2 21h20L12 3Z"/><path d="M12 9v5M12 17h.01"/></svg>
+            <p><strong>Naturaleza de los datos:</strong> la muestra es sintética e ilustrativa. Los resultados permiten explorar hipótesis y priorizar el MVP, pero no prueban adopción, conversión ni viabilidad comercial.</p>
+          </div>
+
+          <div class="kpi-row" style="margin-top:22px">
+            <div class="kpi"><div class="v">72 %</div><div class="l">intención positiva de uso</div><div class="s">P10 · 36 de 50</div></div>
+            <div class="kpi"><div class="v">70 %</div><div class="l">olvida o entrega tarde al menos a veces</div><div class="s">P3 · 35 de 50</div></div>
+            <div class="kpi"><div class="v">74 %</div><div class="l">tiene cuatro o más pendientes semanales</div><div class="s">P2 · 37 de 50</div></div>
+            <div class="kpi"><div class="v">16 %</div><div class="l">considera suficiente el límite de 3 tareas</div><div class="s">P11 · 8 de 50</div></div>
+          </div>
+
+          <div class="h3">Resultados por pregunta</div>
+
+          <div class="question">
+            <div class="q-head"><span class="q-num">P1</span><h4>Herramientas utilizadas para organizar actividades</h4></div>
+            <div class="q-sub">Frecuencia y porcentaje sobre 50 respuestas</div>
+            <div class="chart-card">
+              <div class="chart" role="img" aria-label="Notas del celular 38 por ciento, cuaderno o agenda 26 por ciento, Google Calendar 16 por ciento, aplicaciones de tareas 12 por ciento, ninguna 8 por ciento">
+                <div class="bar-row" title="Notas del celular · 19 respuestas · 38 %"><span class="bar-label">Notas del celular</span><span class="bar-track"><span class="bar-fill" style="--w:38%"></span></span><span class="bar-val"><b>38 %</b><span>19</span></span></div>
+                <div class="bar-row" title="Cuaderno o agenda · 13 respuestas · 26 %"><span class="bar-label">Cuaderno o agenda</span><span class="bar-track"><span class="bar-fill" style="--w:26%"></span></span><span class="bar-val"><b>26 %</b><span>13</span></span></div>
+                <div class="bar-row" title="Google Calendar o similar · 8 respuestas · 16 %"><span class="bar-label">Google Calendar o similar</span><span class="bar-track"><span class="bar-fill" style="--w:16%"></span></span><span class="bar-val"><b>16 %</b><span>8</span></span></div>
+                <div class="bar-row" title="Aplicaciones de tareas · 6 respuestas · 12 %"><span class="bar-label">Aplicaciones de tareas</span><span class="bar-track"><span class="bar-fill" style="--w:12%"></span></span><span class="bar-val"><b>12 %</b><span>6</span></span></div>
+                <div class="bar-row" title="Ninguna · 4 respuestas · 8 %"><span class="bar-label">Ninguna</span><span class="bar-track"><span class="bar-fill" style="--w:8%"></span></span><span class="bar-val"><b>8 %</b><span>4</span></span></div>
+              </div>
+            </div>
+            <p class="interpretation"><strong>Interpretación:</strong> el 64 % usa notas del celular o cuadernos, lo que sugiere espacio para una herramienta académica integrada.</p>
+          </div>
+
+          <div class="question">
+            <div class="q-head"><span class="q-num">P2</span><h4>Cantidad de tareas pendientes en una semana normal</h4></div>
+            <div class="q-sub">Frecuencia y porcentaje sobre 50 respuestas</div>
+            <div class="chart-card">
+              <div class="chart" role="img" aria-label="De 1 a 3 tareas 24 por ciento, de 4 a 6 tareas 50 por ciento, más de 6 tareas 24 por ciento, ninguna 2 por ciento">
+                <div class="bar-row" title="1 a 3 · 12 respuestas · 24 %"><span class="bar-label">1 a 3</span><span class="bar-track"><span class="bar-fill" style="--w:24%"></span></span><span class="bar-val"><b>24 %</b><span>12</span></span></div>
+                <div class="bar-row" title="4 a 6 · 25 respuestas · 50 %"><span class="bar-label">4 a 6</span><span class="bar-track"><span class="bar-fill" style="--w:50%"></span></span><span class="bar-val"><b>50 %</b><span>25</span></span></div>
+                <div class="bar-row" title="Más de 6 · 12 respuestas · 24 %"><span class="bar-label">Más de 6</span><span class="bar-track"><span class="bar-fill" style="--w:24%"></span></span><span class="bar-val"><b>24 %</b><span>12</span></span></div>
+                <div class="bar-row" title="Ninguna · 1 respuesta · 2 %"><span class="bar-label">Ninguna</span><span class="bar-track"><span class="bar-fill" style="--w:2%"></span></span><span class="bar-val"><b>2 %</b><span>1</span></span></div>
+              </div>
+            </div>
+            <p class="interpretation"><strong>Interpretación:</strong> el 74 % reporta cuatro o más pendientes; esto cuestiona si el límite gratuito de tres tareas es suficientemente atractivo.</p>
+          </div>
+
+          <div class="question">
+            <div class="q-head"><span class="q-num">P3</span><h4>Frecuencia de olvidos o entregas tardías</h4></div>
+            <div class="q-sub">Frecuencia y porcentaje sobre 50 respuestas</div>
+            <div class="chart-card">
+              <div class="chart" role="img" aria-label="Nunca 8 por ciento, rara vez 22 por ciento, a veces 48 por ciento, frecuentemente 22 por ciento">
+                <div class="bar-row" title="Nunca · 4 respuestas · 8 %"><span class="bar-label">Nunca</span><span class="bar-track"><span class="bar-fill" style="--w:8%"></span></span><span class="bar-val"><b>8 %</b><span>4</span></span></div>
+                <div class="bar-row" title="Rara vez · 11 respuestas · 22 %"><span class="bar-label">Rara vez</span><span class="bar-track"><span class="bar-fill" style="--w:22%"></span></span><span class="bar-val"><b>22 %</b><span>11</span></span></div>
+                <div class="bar-row" title="A veces · 24 respuestas · 48 %"><span class="bar-label">A veces</span><span class="bar-track"><span class="bar-fill" style="--w:48%"></span></span><span class="bar-val"><b>48 %</b><span>24</span></span></div>
+                <div class="bar-row" title="Frecuentemente · 11 respuestas · 22 %"><span class="bar-label">Frecuentemente</span><span class="bar-track"><span class="bar-fill" style="--w:22%"></span></span><span class="bar-val"><b>22 %</b><span>11</span></span></div>
+              </div>
+            </div>
+            <p class="interpretation"><strong>Interpretación:</strong> el 70 % experimenta olvidos o retrasos al menos a veces, respaldando la prioridad de los recordatorios.</p>
+          </div>
+
+          <div class="question">
+            <div class="q-head"><span class="q-num">P4</span><h4>Dificultad para coordinar proyectos grupales</h4></div>
+            <div class="q-sub">Escala de 1 (muy fácil) a 5 (muy difícil)</div>
+            <div class="chart-card">
+              <div class="chart" role="img" aria-label="Nivel 1: 6 por ciento; nivel 2: 14 por ciento; nivel 3: 26 por ciento; nivel 4: 36 por ciento; nivel 5: 18 por ciento">
+                <div class="bar-row" title="1 · Muy fácil · 3 respuestas · 6 %"><span class="bar-label">1 · Muy fácil</span><span class="bar-track"><span class="bar-fill" style="--w:6%"></span></span><span class="bar-val"><b>6 %</b><span>3</span></span></div>
+                <div class="bar-row" title="2 · 7 respuestas · 14 %"><span class="bar-label">2</span><span class="bar-track"><span class="bar-fill" style="--w:14%"></span></span><span class="bar-val"><b>14 %</b><span>7</span></span></div>
+                <div class="bar-row" title="3 · 13 respuestas · 26 %"><span class="bar-label">3</span><span class="bar-track"><span class="bar-fill" style="--w:26%"></span></span><span class="bar-val"><b>26 %</b><span>13</span></span></div>
+                <div class="bar-row" title="4 · 18 respuestas · 36 %"><span class="bar-label">4</span><span class="bar-track"><span class="bar-fill" style="--w:36%"></span></span><span class="bar-val"><b>36 %</b><span>18</span></span></div>
+                <div class="bar-row" title="5 · Muy difícil · 9 respuestas · 18 %"><span class="bar-label">5 · Muy difícil</span><span class="bar-track"><span class="bar-fill" style="--w:18%"></span></span><span class="bar-val"><b>18 %</b><span>9</span></span></div>
+              </div>
+            </div>
+            <p class="interpretation"><strong>Interpretación:</strong> el 54 % puntúa la dificultad con 4 o 5; hay un problema relevante de coordinación.</p>
+          </div>
+
+          <div class="question">
+            <div class="q-head"><span class="q-num">P5</span><h4>Importancia de usar la app sin Internet</h4></div>
+            <div class="q-sub">Escala de 1 (nada importante) a 5 (indispensable)</div>
+            <div class="chart-card">
+              <div class="chart" role="img" aria-label="Nivel 1: 4 por ciento; nivel 2: 8 por ciento; nivel 3: 18 por ciento; nivel 4: 34 por ciento; nivel 5: 36 por ciento">
+                <div class="bar-row" title="1 · Nada importante · 2 respuestas · 4 %"><span class="bar-label">1 · Nada importante</span><span class="bar-track"><span class="bar-fill" style="--w:4%"></span></span><span class="bar-val"><b>4 %</b><span>2</span></span></div>
+                <div class="bar-row" title="2 · 4 respuestas · 8 %"><span class="bar-label">2</span><span class="bar-track"><span class="bar-fill" style="--w:8%"></span></span><span class="bar-val"><b>8 %</b><span>4</span></span></div>
+                <div class="bar-row" title="3 · 9 respuestas · 18 %"><span class="bar-label">3</span><span class="bar-track"><span class="bar-fill" style="--w:18%"></span></span><span class="bar-val"><b>18 %</b><span>9</span></span></div>
+                <div class="bar-row" title="4 · 17 respuestas · 34 %"><span class="bar-label">4</span><span class="bar-track"><span class="bar-fill" style="--w:34%"></span></span><span class="bar-val"><b>34 %</b><span>17</span></span></div>
+                <div class="bar-row" title="5 · Indispensable · 18 respuestas · 36 %"><span class="bar-label">5 · Indispensable</span><span class="bar-track"><span class="bar-fill" style="--w:36%"></span></span><span class="bar-val"><b>36 %</b><span>18</span></span></div>
+              </div>
+            </div>
+            <p class="interpretation"><strong>Interpretación:</strong> el 70 % valora el acceso sin Internet con 4 o 5 puntos.</p>
+          </div>
+
+          <div class="question">
+            <div class="q-head"><span class="q-num">P6</span><h4>Característica más valorada</h4></div>
+            <div class="q-sub">Frecuencia y porcentaje sobre 50 respuestas</div>
+            <div class="chart-card">
+              <div class="chart" role="img" aria-label="Alertas y recordatorios 38 por ciento, registro rápido 28 por ciento, coordinación grupal 20 por ciento, funcionamiento sin Internet 14 por ciento">
+                <div class="bar-row" title="Alertas y recordatorios · 19 respuestas · 38 %"><span class="bar-label">Alertas y recordatorios</span><span class="bar-track"><span class="bar-fill" style="--w:38%"></span></span><span class="bar-val"><b>38 %</b><span>19</span></span></div>
+                <div class="bar-row" title="Registro rápido · 14 respuestas · 28 %"><span class="bar-label">Registro rápido</span><span class="bar-track"><span class="bar-fill" style="--w:28%"></span></span><span class="bar-val"><b>28 %</b><span>14</span></span></div>
+                <div class="bar-row" title="Coordinación grupal · 10 respuestas · 20 %"><span class="bar-label">Coordinación grupal</span><span class="bar-track"><span class="bar-fill" style="--w:20%"></span></span><span class="bar-val"><b>20 %</b><span>10</span></span></div>
+                <div class="bar-row" title="Funcionamiento sin Internet · 7 respuestas · 14 %"><span class="bar-label">Funcionamiento sin Internet</span><span class="bar-track"><span class="bar-fill" style="--w:14%"></span></span><span class="bar-val"><b>14 %</b><span>7</span></span></div>
+              </div>
+            </div>
+            <p class="interpretation"><strong>Interpretación:</strong> alertas y registro rápido suman el 66 % de preferencias y deben orientar el producto mínimo viable (MVP).</p>
+          </div>
+
+          <div class="question">
+            <div class="q-head"><span class="q-num">P7</span><h4>Tolerancia a publicidad pequeña</h4></div>
+            <div class="q-sub">Frecuencia y porcentaje sobre 50 respuestas</div>
+            <div class="chart-card">
+              <div class="chart" role="img" aria-label="Tolerancia baja 30 por ciento, media 58 por ciento, alta 12 por ciento">
+                <div class="bar-row" title="Baja · 15 respuestas · 30 %"><span class="bar-label">Baja</span><span class="bar-track"><span class="bar-fill" style="--w:30%"></span></span><span class="bar-val"><b>30 %</b><span>15</span></span></div>
+                <div class="bar-row" title="Media · 29 respuestas · 58 %"><span class="bar-label">Media</span><span class="bar-track"><span class="bar-fill" style="--w:58%"></span></span><span class="bar-val"><b>58 %</b><span>29</span></span></div>
+                <div class="bar-row" title="Alta · 6 respuestas · 12 %"><span class="bar-label">Alta</span><span class="bar-track"><span class="bar-fill" style="--w:12%"></span></span><span class="bar-val"><b>12 %</b><span>6</span></span></div>
+              </div>
+            </div>
+            <p class="interpretation"><strong>Interpretación:</strong> el 70 % declara tolerancia media o alta, siempre que la publicidad no interfiera con la experiencia.</p>
+          </div>
+
+          <div class="question">
+            <div class="q-head"><span class="q-num">P8</span><h4>Disposición de pago único por la versión Premium</h4></div>
+            <div class="q-sub">Frecuencia y porcentaje sobre 50 respuestas</div>
+            <div class="chart-card">
+              <div class="chart" role="img" aria-label="No pagaría 36 por ciento, menos de 5 dólares 34 por ciento, entre 5 y 10 dólares 24 por ciento, más de 10 dólares 6 por ciento">
+                <div class="bar-row" title="No pagaría · 18 respuestas · 36 %"><span class="bar-label">No pagaría</span><span class="bar-track"><span class="bar-fill" style="--w:36%"></span></span><span class="bar-val"><b>36 %</b><span>18</span></span></div>
+                <div class="bar-row" title="Menos de US$5 · 17 respuestas · 34 %"><span class="bar-label">Menos de US$5</span><span class="bar-track"><span class="bar-fill" style="--w:34%"></span></span><span class="bar-val"><b>34 %</b><span>17</span></span></div>
+                <div class="bar-row" title="Entre US$5 y US$10 · 12 respuestas · 24 %"><span class="bar-label">Entre US$5 y US$10</span><span class="bar-track"><span class="bar-fill" style="--w:24%"></span></span><span class="bar-val"><b>24 %</b><span>12</span></span></div>
+                <div class="bar-row" title="Más de US$10 · 3 respuestas · 6 %"><span class="bar-label">Más de US$10</span><span class="bar-track"><span class="bar-fill" style="--w:6%"></span></span><span class="bar-val"><b>6 %</b><span>3</span></span></div>
+              </div>
+            </div>
+            <p class="interpretation"><strong>Interpretación:</strong> el 64 % considera algún pago, pero no equivale a compras efectivas; conviene probar precios bajos.</p>
+          </div>
+
+          <div class="question">
+            <div class="q-head"><span class="q-num">P9</span><h4>Frustración principal · respuestas abiertas codificadas</h4></div>
+            <div class="q-sub">Una categoría principal por respuesta</div>
+            <div class="chart-card">
+              <div class="chart" role="img" aria-label="Falta de recordatorios 34 por ciento, información dispersa 24 por ciento, apps complicadas 20 por ciento, coordinación grupal 14 por ciento, dependencia de Internet 8 por ciento">
+                <div class="bar-row" title="Falta de recordatorios · 17 respuestas · 34 %"><span class="bar-label">Falta de recordatorios</span><span class="bar-track"><span class="bar-fill" style="--w:34%"></span></span><span class="bar-val"><b>34 %</b><span>17</span></span></div>
+                <div class="bar-row" title="Información dispersa · 12 respuestas · 24 %"><span class="bar-label">Información dispersa</span><span class="bar-track"><span class="bar-fill" style="--w:24%"></span></span><span class="bar-val"><b>24 %</b><span>12</span></span></div>
+                <div class="bar-row" title="Apps complicadas · 10 respuestas · 20 %"><span class="bar-label">Apps complicadas</span><span class="bar-track"><span class="bar-fill" style="--w:20%"></span></span><span class="bar-val"><b>20 %</b><span>10</span></span></div>
+                <div class="bar-row" title="Coordinación grupal · 7 respuestas · 14 %"><span class="bar-label">Coordinación grupal</span><span class="bar-track"><span class="bar-fill" style="--w:14%"></span></span><span class="bar-val"><b>14 %</b><span>7</span></span></div>
+                <div class="bar-row" title="Dependencia de Internet · 4 respuestas · 8 %"><span class="bar-label">Dependencia de Internet</span><span class="bar-track"><span class="bar-fill" style="--w:8%"></span></span><span class="bar-val"><b>8 %</b><span>4</span></span></div>
+              </div>
+            </div>
+            <p class="interpretation"><strong>Interpretación:</strong> las menciones se concentran en recordatorios, dispersión y complejidad.</p>
+          </div>
+
+          <div class="question">
+            <div class="q-head"><span class="q-num">P10</span><h4>Intención de utilizar TaskU</h4></div>
+            <div class="q-sub">Frecuencia y porcentaje sobre 50 respuestas</div>
+            <div class="chart-card">
+              <div class="chart" role="img" aria-label="Definitivamente sí 28 por ciento, probablemente sí 44 por ciento, no estoy seguro 20 por ciento, probablemente no 6 por ciento, definitivamente no 2 por ciento">
+                <div class="bar-row" title="Definitivamente sí · 14 respuestas · 28 %"><span class="bar-label">Definitivamente sí</span><span class="bar-track"><span class="bar-fill" style="--w:28%"></span></span><span class="bar-val"><b>28 %</b><span>14</span></span></div>
+                <div class="bar-row" title="Probablemente sí · 22 respuestas · 44 %"><span class="bar-label">Probablemente sí</span><span class="bar-track"><span class="bar-fill" style="--w:44%"></span></span><span class="bar-val"><b>44 %</b><span>22</span></span></div>
+                <div class="bar-row" title="No estoy seguro/a · 10 respuestas · 20 %"><span class="bar-label">No estoy seguro/a</span><span class="bar-track"><span class="bar-fill" style="--w:20%"></span></span><span class="bar-val"><b>20 %</b><span>10</span></span></div>
+                <div class="bar-row" title="Probablemente no · 3 respuestas · 6 %"><span class="bar-label">Probablemente no</span><span class="bar-track"><span class="bar-fill" style="--w:6%"></span></span><span class="bar-val"><b>6 %</b><span>3</span></span></div>
+                <div class="bar-row" title="Definitivamente no · 1 respuesta · 2 %"><span class="bar-label">Definitivamente no</span><span class="bar-track"><span class="bar-fill" style="--w:2%"></span></span><span class="bar-val"><b>2 %</b><span>1</span></span></div>
+              </div>
+            </div>
+            <p class="interpretation"><strong>Interpretación:</strong> el 72 % expresa intención positiva de uso; esto es interés declarado, no adopción comprobada.</p>
+          </div>
+
+          <div class="question">
+            <div class="q-head"><span class="q-num">P11</span><h4>Aceptación del límite gratuito de tres tareas</h4></div>
+            <div class="q-sub">Frecuencia y porcentaje sobre 50 respuestas</div>
+            <div class="chart-card">
+              <div class="chart" role="img" aria-label="Sí, suficiente 16 por ciento; lo probaría pero limita 38 por ciento; preferiría al menos 5 gratis 34 por ciento; no usaría una app con ese límite 12 por ciento">
+                <div class="bar-row" title="Sí, me parece suficiente · 8 respuestas · 16 %"><span class="bar-label">Sí, me parece suficiente</span><span class="bar-track"><span class="bar-fill" style="--w:16%"></span></span><span class="bar-val"><b>16 %</b><span>8</span></span></div>
+                <div class="bar-row" title="Lo probaría, pero me limita · 19 respuestas · 38 %"><span class="bar-label">Lo probaría, pero me limita</span><span class="bar-track"><span class="bar-fill" style="--w:38%"></span></span><span class="bar-val"><b>38 %</b><span>19</span></span></div>
+                <div class="bar-row" title="Preferiría al menos 5 gratis · 17 respuestas · 34 %"><span class="bar-label">Preferiría al menos 5 gratis</span><span class="bar-track"><span class="bar-fill" style="--w:34%"></span></span><span class="bar-val"><b>34 %</b><span>17</span></span></div>
+                <div class="bar-row" title="No usaría una app con ese límite · 6 respuestas · 12 %"><span class="bar-label">No usaría una app con ese límite</span><span class="bar-track"><span class="bar-fill" style="--w:12%"></span></span><span class="bar-val"><b>12 %</b><span>6</span></span></div>
+              </div>
+            </div>
+            <p class="interpretation"><strong>Interpretación:</strong> solo el 16 % considera suficiente el límite; el 46 % prefiere cinco tareas o rechaza ese límite, señal de riesgo para la conversión.</p>
+          </div>
+
+          <div class="question">
+            <div class="q-head"><span class="q-num">P12</span><h4>Frecuencia de participación en proyectos grupales</h4></div>
+            <div class="q-sub">Frecuencia y porcentaje sobre 50 respuestas</div>
+            <div class="chart-card">
+              <div class="chart" role="img" aria-label="Nunca 4 por ciento, rara vez 14 por ciento, a veces 36 por ciento, frecuentemente 34 por ciento, muy frecuentemente 12 por ciento">
+                <div class="bar-row" title="Nunca · 2 respuestas · 4 %"><span class="bar-label">Nunca</span><span class="bar-track"><span class="bar-fill" style="--w:4%"></span></span><span class="bar-val"><b>4 %</b><span>2</span></span></div>
+                <div class="bar-row" title="Rara vez · 7 respuestas · 14 %"><span class="bar-label">Rara vez</span><span class="bar-track"><span class="bar-fill" style="--w:14%"></span></span><span class="bar-val"><b>14 %</b><span>7</span></span></div>
+                <div class="bar-row" title="A veces · 18 respuestas · 36 %"><span class="bar-label">A veces</span><span class="bar-track"><span class="bar-fill" style="--w:36%"></span></span><span class="bar-val"><b>36 %</b><span>18</span></span></div>
+                <div class="bar-row" title="Frecuentemente · 17 respuestas · 34 %"><span class="bar-label">Frecuentemente</span><span class="bar-track"><span class="bar-fill" style="--w:34%"></span></span><span class="bar-val"><b>34 %</b><span>17</span></span></div>
+                <div class="bar-row" title="Muy frecuentemente · 6 respuestas · 12 %"><span class="bar-label">Muy frecuentemente</span><span class="bar-track"><span class="bar-fill" style="--w:12%"></span></span><span class="bar-val"><b>12 %</b><span>6</span></span></div>
+              </div>
+            </div>
+            <p class="interpretation"><strong>Interpretación:</strong> el 46 % participa frecuentemente o muy frecuentemente; los tableros colaborativos tienen un público potencial.</p>
+          </div>
+
+          <div class="h3">Hallazgos principales</div>
+          <div class="grid-2">
+            <div class="panel">
+              <h4>El problema existe</h4>
+              <ul>
+                <li><strong>37 de 50 (74 %)</strong> tienen cuatro o más tareas pendientes en una semana normal.</li>
+                <li><strong>35 de 50 (70 %)</strong> olvidan o entregan tarde actividades al menos ocasionalmente; 19 eligen las alertas como función principal.</li>
+                <li><strong>33 de 50 (66 %)</strong> priorizan alertas o registro rápido; <strong>35 de 50 (70 %)</strong> valoran el uso sin Internet.</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <h4>El modelo debe validarse</h4>
+              <ul>
+                <li><strong>36 de 50 (72 %)</strong> dicen que definitiva o probablemente usarían la app, sin que ello pruebe adopción real.</li>
+                <li><strong>8 de 50 (16 %)</strong> creen suficiente el límite de tres tareas; <strong>23 de 50 (46 %)</strong> preferirían cinco o no usarían una app con ese límite.</li>
+                <li><strong>32 de 50 (64 %)</strong> expresan disposición a algún pago; <strong>35 de 50 (70 %)</strong> toleran anuncios de forma media o alta.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="h3">Análisis del modelo de negocio</div>
+          <div class="grid-2">
+            <div class="panel">
+              <h4>Problema–solución</h4>
+              <p style="font-size:.84rem;color:var(--ink-2);margin:0">El patrón sintético favorece una app que centralice tareas y facilite recordatorios, en consonancia con el user persona y la propuesta de valor. El funcionamiento local responde a la importancia asignada al acceso sin Internet.</p>
+            </div>
+            <div class="panel">
+              <h4>Freemium</h4>
+              <p style="font-size:.84rem;color:var(--ink-2);margin:0">El límite de tres tareas aparece como un punto de fricción. La proporción con cuatro o más pendientes no es una tasa de conversión: algunos podrían abandonar, completar tareas antes de registrar otras o buscar alternativas gratuitas. Conviene experimentar con 3 y 5 tareas.</p>
+            </div>
+            <div class="panel">
+              <h4>Ingresos</h4>
+              <p style="font-size:.84rem;color:var(--ink-2);margin:0">La tolerancia declarada a anuncios no permite calcular ingresos por AdMob, y la disposición a pagar no permite estimar ventas. La preferencia por pagos bajos respalda probar un pase Premium accesible.</p>
+            </div>
+            <div class="panel">
+              <h4>Colaboración</h4>
+              <p style="font-size:.84rem;color:var(--ink-2);margin:0">23 de 50 perfiles (46 %) participan frecuente o muy frecuentemente en proyectos grupales; la función puede servir como diferenciador, pero su uso real debe medirse con un prototipo.</p>
+            </div>
+          </div>
+
+          <div class="h3">Recomendaciones</div>
+          <div class="grid-2">
+            <div class="panel">
+              <h4>Producto</h4>
+              <ol style="margin:0;padding-left:18px">
+                <li><strong>MVP:</strong> registro de tareas en pocos pasos, alertas confiables y consulta sin conexión.</li>
+                <li><strong>Límite gratuito:</strong> prueba A/B o entrevistas de usabilidad con tres frente a cinco tareas activas.</li>
+                <li><strong>Premium:</strong> tareas ilimitadas, tableros grupales, respaldo en la nube y eliminación de anuncios; probar el precio con usuarios reales.</li>
+                <li><strong>Publicidad:</strong> banners discretos; evitar anuncios invasivos que interrumpan el registro.</li>
+                <li><strong>Colaboración:</strong> validar tableros grupales con equipos reales y evaluar creación, asignación y seguimiento.</li>
+              </ol>
+            </div>
+            <div class="panel">
+              <h4>Investigación y métricas</h4>
+              <ol start="6" style="margin:0;padding-left:18px">
+                <li><strong>Investigación real:</strong> difundir el formulario entre estudiantes de distintos semestres, recopilar consentimiento y exportar respuestas para sustituir las cifras sintéticas.</li>
+                <li><strong>Métricas posteriores:</strong> usuarios activos, tareas registradas, retención, uso de alertas, tasa de llegada al límite y conversión efectiva a Premium.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="h3">Conclusión</div>
+          <p>El análisis sugiere que TaskU podría responder a problemas de organización, recordatorios y coordinación académica. También pone de manifiesto una tensión entre el límite de tres tareas gratuitas y la necesidad de mantener una experiencia útil desde el inicio. La prioridad debe ser comprobar estas hipótesis con una muestra real, un prototipo funcional y métricas de uso antes de afirmar viabilidad comercial.</p>
+
+          <div class="callout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+            <p><strong>Anexo A.</strong> La base de 50 respuestas individuales se incluye en un archivo CSV complementario. Cada fila representa un perfil y cada columna corresponde a una pregunta; se respetan exactamente las frecuencias resumidas en este informe.</p>
+          </div>
+        </div>
+      </details>
+
+    </section>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap footer-grid">
+    <div>
+      <strong>TaskU · Dossier estratégico</strong>
+      <p style="margin-top:6px">Página construida a partir de cinco documentos académicos del proyecto TaskU (Universidad Mesoamericana, sede Quetzaltenango). Incluye como valor agregado las matrices EFI y EFE y el análisis PESTEL.</p>
+    </div>
+    <div>
+      <strong>Fuentes</strong>
+      <ul>
+        <li>Documento del proyecto TaskU</li>
+        <li>Business Model Canvas</li>
+        <li>Matriz de Perfil Competitivo</li>
+        <li>Análisis Muda</li>
+        <li>Informe de sondeo simulado</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>Noviembre de 2026 · Elaboración académica</span>
+    <span>Datos del sondeo: 50 perfiles sintéticos; cifras no representan adopción real.</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var toggle = document.getElementById('theme-toggle');
+    var icon = document.getElementById('theme-icon');
+    var sun = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
+    var moon = '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/>';
+    function paint() {
+      icon.innerHTML = root.dataset.theme === 'dark' ? sun : moon;
+      toggle.setAttribute('aria-label', root.dataset.theme === 'dark' ? 'Activar tema claro' : 'Activar tema oscuro');
+    }
+    paint();
+    toggle.addEventListener('click', function () {
+      root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      try { localStorage.setItem('tasku-theme', root.dataset.theme); } catch (e) {}
+      paint();
+    });
+
+    var accs = Array.prototype.slice.call(document.querySelectorAll('details.acc'));
+    var allBtn = document.getElementById('toggle-all');
+    var allLabel = document.getElementById('toggle-label');
+    allBtn.addEventListener('click', function () {
+      var anyClosed = accs.some(function (d) { return !d.open; });
+      accs.forEach(function (d) { d.open = anyClosed; });
+      allLabel.textContent = anyClosed ? 'Contraer todo' : 'Expandir todo';
+    });
+
+    function openHash() {
+      if (!location.hash) return;
+      var el = document.getElementById(location.hash.slice(1));
+      if (el && el.tagName === 'DETAILS') el.open = true;
+    }
+    window.addEventListener('hashchange', openHash);
+    openHash();
+
+    var progress = document.getElementById('progress');
+    function onScroll() {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      progress.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    var navLinks = Array.prototype.slice.call(document.querySelectorAll('[data-nav]'));
+    var sections = navLinks.map(function (a) { return document.getElementById(a.dataset.nav); }).filter(Boolean);
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          navLinks.forEach(function (a) { a.classList.toggle('active', a.dataset.nav === e.target.id); });
+        });
+      }, { rootMargin: '-35% 0px -55% 0px' });
+      sections.forEach(function (s) { obs.observe(s); });
+    }
+
+  })();
+</script>
+</body>
+</html>
